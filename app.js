@@ -1,6 +1,5 @@
 ﻿const quizContainer = document.getElementById('quiz-container');
 
-// 1. Tvoji podaci (Ovdje dodaješ nova pitanja)
 const quizData = [
     {
         type: "abcd",
@@ -10,29 +9,24 @@ const quizData = [
     },
     {
         type: "input",
-        question: "Upiši ime najvećeg planeta u Sunčevom sustavu:",
+        question: "Koji je najveći planet Sunčevog sustava?",
         correct: "Jupiter"
     },
     {
-        type: "image-select",
-        question: "Što se nalazi na slici?",
-        image: "https://via.placeholder.com/300", // Ovdje ćeš staviti pravi URL slike
-        correct: "krug"
+        type: "input",
+        question: "Kako se zove glavni grad Francuske?",
+        correct: "Pariz"
     }
 ];
 
 let currentQuestionIndex = 0;
+let attempts = 0; // Brojač pokušaja
 
-// 2. Funkcija za prikaz pitanja
 function loadQuestion() {
+    attempts = 0; // Resetiraj pokušaje za novo pitanje
     const q = quizData[currentQuestionIndex];
-    quizContainer.innerHTML = ""; // Očisti prethodno pitanje
+    quizContainer.innerHTML = `<h2>${q.question}</h2>`;
 
-    const questionText = document.createElement("h2");
-    questionText.innerText = q.question;
-    quizContainer.appendChild(questionText);
-
-    // Ako je pitanje ABCD
     if (q.type === "abcd") {
         q.options.forEach(opt => {
             const btn = document.createElement("button");
@@ -41,40 +35,49 @@ function loadQuestion() {
             btn.onclick = () => checkAnswer(opt);
             quizContainer.appendChild(btn);
         });
-    }
-    // Ako je pitanje tipa UNOS
-    else if (q.type === "input") {
+    } else if (q.type === "input") {
         const input = document.createElement("input");
         input.type = "text";
         input.id = "user-answer";
-        input.placeholder = "Tvoj odgovor...";
+        input.placeholder = "Upiši odgovor...";
 
-        const submitBtn = document.createElement("button");
-        submitBtn.innerText = "Provjeri";
-        submitBtn.className = "quiz-btn primary";
-        submitBtn.onclick = () => checkAnswer(document.getElementById("user-answer").value);
+        const btn = document.createElement("button");
+        btn.innerText = "Provjeri";
+        btn.className = "quiz-btn";
+        btn.onclick = () => checkAnswer(document.getElementById("user-answer").value);
 
         quizContainer.appendChild(input);
-        quizContainer.appendChild(submitBtn);
+        quizContainer.appendChild(btn);
     }
 }
 
-// 3. Provjera odgovora
-function checkAnswer(answer) {
+function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
+    // Pravilo 1: Mala i velika slova nisu bitna
+    const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
 
-    if (answer.toLowerCase().trim() === q.correct.toLowerCase().trim()) {
-        alert("Točno! 🎉");
-        currentQuestionIndex++;
-        if (currentQuestionIndex < quizData.length) {
-            loadQuestion();
-        } else {
-            quizContainer.innerHTML = "<h2>Kviz završen! Bravo! 🏆</h2>";
-        }
+    if (isCorrect) {
+        alert("Točno! 🌟");
+        nextQuestion();
     } else {
-        alert("Pokušaj ponovo! ❌");
+        attempts++;
+        if (attempts < 3) {
+            alert(`Netočno! Imaš još ${3 - attempts} pokušaja.`);
+        } else {
+            // Pravilo 2: Nakon 3 greške, pokaži odgovor i idi dalje
+            alert(`Netočno. Točan odgovor je: ${q.correct}`);
+            nextQuestion();
+        }
     }
 }
 
-// Pokreni kviz odmah
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
+    } else {
+        quizContainer.innerHTML = "<h2>Kviz završen! 🏆</h2>";
+    }
+}
+
 loadQuestion();
