@@ -1,0 +1,40 @@
+﻿[
+  {
+    "type": "abcd",
+    "question": "Koji je ovo uređaj?",
+    "image": "images/pitanje1.jpg",
+    "options": [ "Televizor", "Kompjuter", "Radio", "Kalkulator" ],
+    "correct": "Kompjuter"
+  },
+  {
+    "type": "input",
+    "question": "Što je prikazano na ovoj slici?",
+    "image": "images/pitanje2.jpg",
+    "correct": "Slanina"
+  },
+  {
+    "type": "input",
+    "question": "Koji je glavni grad Hrvatske?",
+    "correct": "Zagreb"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je ovo uređaj?",
+    "image": "images/pitanje1.jpg",
+    "options": [ "Televizor", "Kompjuter", "Radio", "Kalkulator" ],
+    "correct": "Kompjuter"
+  },
+  {
+    "type": "input",
+    "question": "Što je prikazano na ovoj slici?",
+    "image": "images/pitanje2.jpg",
+    "correct": "Slanina"
+  },
+  {
+    "type": "input",
+    "question": "Kako se zove glavni grad Njemačke?",
+    "correct": "Berlin"
+  }
+
+]
+

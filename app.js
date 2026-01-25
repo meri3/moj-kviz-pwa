@@ -1,48 +1,43 @@
 ﻿const quizContainer = document.getElementById('quiz-container');
-
-const quizData = [
-    {
-        type: "abcd",
-        question: "Koji je ovo uređaj?",
-        image: "images/pitanje1.jpg",
-        options: ["Televizor", "Kompjuter", "Radio", "Kalkulator"],
-        correct: "Kompjuter"
-    },
-    {
-        type: "input",
-        question: "Što je prikazano na ovoj slici?",
-        image: "images/pitanje2.jpg",
-        correct: "Slanina"
-    }
-];
-
+let quizData = [];
 let currentQuestionIndex = 0;
-let attempts = 0; // Brojač pokušaja
+let attempts = 0;
+
+async function startQuiz() {
+    try {
+        const response = await fetch('pitanja.json');
+        quizData = await response.json();
+        loadQuestion();
+    } catch (error) {
+        quizContainer.innerHTML = "<h2>Greška pri učitavanju pitanja...</h2>";
+    }
+}
+
+// NOVA FUNKCIJA: Prikazuje poruku koja nestane nakon 2 sekunde
+function showMessage(text, callback) {
+    // Kreiramo element za poruku
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "feedback-popup";
+    msgDiv.innerText = text;
+    document.body.appendChild(msgDiv);
+
+    // Nakon 2 sekunde makni poruku i pokreni sljedeću radnju (callback)
+    setTimeout(() => {
+        msgDiv.remove();
+        if (callback) callback();
+    }, 2000);
+}
 
 function loadQuestion() {
-    attempts = 0; // Resetiraj pokušaje za novo pitanje
+    attempts = 0;
     const q = quizData[currentQuestionIndex];
     quizContainer.innerHTML = `<h2>${q.question}</h2>`;
 
-    function loadQuestion() {
-        attempts = 0;
-        const q = quizData[currentQuestionIndex];
-        quizContainer.innerHTML = `<h2>${q.question}</h2>`;
-
-        // DODAJ OVO: Ako pitanje ima sliku, prikaži je
-        if (q.image) {
-            const img = document.createElement("img");
-            img.src = q.image;
-            img.className = "quiz-image"; // Dodat ćemo stil u CSS
-            quizContainer.appendChild(img);
-        }
-
-        // Ostatak koda za gumbe i input ostaje isti...
-        if (q.type === "abcd") {
-            // ... tvoj postojeći kod za abcd ...
-        } else if (q.type === "input") {
-            // ... tvoj postojeći kod za input ...
-        }
+    if (q.image) {
+        const img = document.createElement("img");
+        img.src = q.image;
+        img.className = "quiz-image";
+        quizContainer.appendChild(img);
     }
 
     if (q.type === "abcd") {
@@ -59,6 +54,13 @@ function loadQuestion() {
         input.id = "user-answer";
         input.placeholder = "Upiši odgovor...";
 
+        // DODANO: Podrška za tipku ENTER
+        input.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                checkAnswer(input.value);
+            }
+        });
+
         const btn = document.createElement("button");
         btn.innerText = "Provjeri";
         btn.className = "quiz-btn";
@@ -66,25 +68,31 @@ function loadQuestion() {
 
         quizContainer.appendChild(input);
         quizContainer.appendChild(btn);
+        input.focus(); // Automatski stavi kursor u polje
     }
 }
 
 function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
-    // Pravilo 1: Mala i velika slova nisu bitna
+    if (!userAnswer) return; // Ako je prazno, ne radi ništa
+
     const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
 
     if (isCorrect) {
-        alert("Točno! 🌟");
-        nextQuestion();
+        showMessage("Točno! 🌟", () => nextQuestion());
     } else {
         attempts++;
-        if (attempts < 3) {
-            alert(`Netočno! Imaš još ${3 - attempts} pokušaja.`);
-        } else {
-            // Pravilo 2: Nakon 3 greške, pokaži odgovor i idi dalje
-            alert(`Netočno. Točan odgovor je: ${q.correct}`);
-            nextQuestion();
+        if (attempts === 1) {
+            showMessage("Netočno! Imaš još 1 pokušaj.", () => {
+                // Očisti polje za novi pokušaj
+                const input = document.getElementById("user-answer");
+                if (input) {
+                    input.value = "";
+                    input.focus();
+                }
+            });
+        } else if (attempts === 2) {
+            showMessage(`Netočno. Točan odgovor je: ${q.correct}`, () => nextQuestion());
         }
     }
 }
@@ -98,4 +106,4 @@ function nextQuestion() {
     }
 }
 
-loadQuestion();
+startQuiz();
