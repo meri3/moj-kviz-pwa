@@ -3,19 +3,16 @@
 const quizData = [
     {
         type: "abcd",
-        question: "Koji je glavni grad Hrvatske?",
-        options: ["Split", "Rijeka", "Zagreb", "Osijek"],
-        correct: "Zagreb"
+        question: "Koji je ovo uređaj?",
+        image: "images/pitanje1.jpg",
+        options: ["Televizor", "Kompjuter", "Radio", "Kalkulator"],
+        correct: "Kompjuter"
     },
     {
         type: "input",
-        question: "Koji je najveći planet Sunčevog sustava?",
-        correct: "Jupiter"
-    },
-    {
-        type: "input",
-        question: "Kako se zove glavni grad Francuske?",
-        correct: "Pariz"
+        question: "Što je prikazano na ovoj slici?",
+        image: "images/pitanje2.jpg",
+        correct: "Slanina"
     }
 ];
 
@@ -26,6 +23,27 @@ function loadQuestion() {
     attempts = 0; // Resetiraj pokušaje za novo pitanje
     const q = quizData[currentQuestionIndex];
     quizContainer.innerHTML = `<h2>${q.question}</h2>`;
+
+    function loadQuestion() {
+        attempts = 0;
+        const q = quizData[currentQuestionIndex];
+        quizContainer.innerHTML = `<h2>${q.question}</h2>`;
+
+        // DODAJ OVO: Ako pitanje ima sliku, prikaži je
+        if (q.image) {
+            const img = document.createElement("img");
+            img.src = q.image;
+            img.className = "quiz-image"; // Dodat ćemo stil u CSS
+            quizContainer.appendChild(img);
+        }
+
+        // Ostatak koda za gumbe i input ostaje isti...
+        if (q.type === "abcd") {
+            // ... tvoj postojeći kod za abcd ...
+        } else if (q.type === "input") {
+            // ... tvoj postojeći kod za input ...
+        }
+    }
 
     if (q.type === "abcd") {
         q.options.forEach(opt => {

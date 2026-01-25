@@ -74,3 +74,13 @@ input[type="text"] {
     font-weight: 500;
     text-align: center;
 }
+
+.quiz-image {
+    width: 100%;
+    max-width: 300px; /* Da ne bude prevelika na iPadu ili kompu */
+    height: auto;
+    border-radius: 12px;
+    margin: 10px auto 20px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
