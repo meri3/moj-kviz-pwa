@@ -57,13 +57,15 @@ h2 {
 /* INPUT POLJE */
 input[type="text"] {
     width: 100%;
+    max-width: 100%; /* Osiguranje */
     padding: 15px;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0; /* Maknuti bočni margini */
     border: 2px solid #e0e0e0;
     border-radius: 15px;
     font-size: 18px;
     background: #f8f9fa;
-    transition: border-color 0.3s;
+    box-sizing: border-box; /* KLJUČNO: Padding ne širi polje van ekrana */
+    display: block;
 }
 
     input[type="text"]:focus {
@@ -112,10 +114,45 @@ input[type="text"] {
         border-color: #ff7675 !important;
     }
 
-/* FEEDBACK POPUP */
+/* NOVI "BLIC" POPUP - Sredina ekrana, traje kratko */
 .feedback-popup {
-    background: rgba(45, 52, 54, 0.9);
-    padding: 25px 45px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9); /* Bijela prozirna */
+    color: #2d3436;
+    padding: 30px;
+    border-radius: 25px;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    z-index: 2000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid #6a11cb;
+    min-width: 200px;
+    pointer-events: none;
+    animation: flash 1s ease-in-out forwards; /* Traje samo 1 sekundu */
 }
+@keyframes flash {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%) scale(0.8);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.9);
+    }
+}
+

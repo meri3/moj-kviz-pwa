@@ -30,7 +30,7 @@ function showMessage(text, callback) {
     setTimeout(() => {
         msgDiv.remove();
         if (callback) callback();
-    }, 2000);
+    }, 1000);
 }
 
 function loadQuestion() {
@@ -143,11 +143,27 @@ function loadQuestion() {
             quizContainer.appendChild(btn);
         });
     } else if (q.type === "input") {
-        const input = document.createElement("input");
-        input.type = "text";
-        input.id = "user-answer";
-        input.placeholder = "Upiši odgovor...";
-        input.addEventListener("keypress", (e) => { if (e.key === "Enter") checkAnswer(input.value); });
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "user-answer";
+    input.placeholder = "Upiši odgovor...";
+
+    // OVO ISKLJUČUJE DOSADNU AUTO-ISPUNU NA IPHONEU
+    input.setAttribute("autocomplete", "off");
+    input.setAttribute("autocorrect", "off");
+    input.setAttribute("spellcheck", "false");
+
+    input.addEventListener("keypress", (e) => { if (e.key === "Enter") checkAnswer(input.value); });
+
+    const btn = document.createElement("button");
+    btn.innerText = "Provjeri";
+    btn.className = "quiz-btn";
+    btn.onclick = () => checkAnswer(document.getElementById("user-answer").value);
+
+    quizContainer.appendChild(input);
+    quizContainer.appendChild(btn);
+    input.focus();
+}
 
         const btn = document.createElement("button");
         btn.innerText = "Provjeri";
@@ -158,7 +174,7 @@ function loadQuestion() {
         quizContainer.appendChild(btn);
         input.focus();
     }
-}
+
 
 function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
