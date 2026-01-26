@@ -110,12 +110,16 @@ function checkAnswer(userAnswer) {
 
     if (isCorrect && inputCleaned !== "") {
         score++;
-        // Prvo šaljemo poruku, pa tek kad ona prođe (nakon 3 sek) idemo na nextQuestion
-        showMessage("Točno! 🌟", () => nextQuestion());
+        // Čekamo 4 sekunde prije nextQuestion
+        showMessage("Točno! 🌟", () => {
+            nextQuestion();
+        });
     } else {
         const displayAnswer = Array.isArray(q.correct) ? q.correct[0] : q.correct;
-        // Ključno: Pitanje ostaje na ekranu dok traje showMessage
-        showMessage(`Točno je: ${displayAnswer}`, () => nextQuestion());
+        // Čekamo 3 sekunde da igrač vidi točan odgovor na starom pitanju
+        showMessage(`Točno je: ${displayAnswer}`, () => {
+            nextQuestion();
+        });
     }
 }
 
@@ -167,29 +171,40 @@ function handlePairTransition() {
 }
 
 function showMessage(text, callback) {
-    // 1. Potpuno onemogući klikove da ne možeš preskočiti
+    // 1. Odmah zaključaj ekran da se ništa ne može kliknuti
     quizContainer.style.pointerEvents = "none";
-    quizContainer.style.opacity = "0.8"; // Blago zatamnimo staro pitanje da se popup bolje vidi
 
+    // 2. Stvori poruku
     const msgDiv = document.createElement("div");
     msgDiv.className = "feedback-popup";
     msgDiv.innerText = text;
 
-    // Crvena boja za netočno
+    // Ako je odgovor kriv, stavljamo jarku crvenu da upada u oči
     if (text.includes("Točno je:")) {
-        msgDiv.style.background = "rgba(220, 53, 69, 0.98)";
-        msgDiv.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
+        msgDiv.style.backgroundColor = "#ff4b2b";
+        msgDiv.style.color = "white";
+    } else {
+        msgDiv.style.backgroundColor = "#2ecc71";
     }
 
     document.body.appendChild(msgDiv);
 
+    // 3. TEST: Dodajemo alert koji će zaustaviti sve dok ga ne klikneš (samo za provjeru)
+    // Ako se ovaj alert NE pojavi, znači da tvoj mobitel uopće ne vidi novi kod
+    // console.log("Poruka bi trebala trajati 4 sekunde"); 
+
+    // 4. Postavljamo na 4000ms (4 pune sekunde)
     setTimeout(() => {
         msgDiv.remove();
-        quizContainer.style.opacity = "1"; // Vratimo vidljivost
-        // TEK SADA dopuštamo prelazak na novo pitanje
-        if (callback) callback();
+
+        // TEK KAD PORUKA NESTANE, zovemo iduće pitanje
+        if (typeof callback === "function") {
+            callback();
+        }
+
+        // Vrati mogućnost klika
         quizContainer.style.pointerEvents = "auto";
-    }, 3500); // Povećao sam na 3.5 sekunde da budeš sigurna
+    }, 3000);
 }
 
 function nextQuestion() {
