@@ -85,22 +85,46 @@ function loadQuestion() {
                     showMessage("Prvo odaberi pojam lijevo!");
                     return;
                 }
-                if (q.pairs[selectedLeft] === item) {
+
+                const correctRightValue = q.pairs[selectedLeft];
+
+                if (correctRightValue === item) {
+                    // TOČNO SPAJANJE
                     btn.classList.add('matched');
                     selectedLeftBtn.classList.add('matched');
                     btn.disabled = true;
                     selectedLeftBtn.disabled = true;
-                    selectedLeft = null;
                     matchedCount++;
-
-                    if (matchedCount === totalPairs) {
-                        score++; // Bod za cijelo točno spajanje
-                        showMessage("Sve točno spojeno! 🌟", () => nextQuestion());
-                    }
+                    showMessage("Točno! 🌟");
                 } else {
-                    showMessage("Krivo spajanje!");
-                    selectedLeftBtn.classList.remove('selected');
-                    selectedLeft = null;
+                    // NETOČNO SPAJANJE - AUTOMATSKO SPAJANJE TOCNOG
+                    // 1. Nađi gumb na desnoj strani koji je zapravo točan
+                    const allRightBtns = rightCol.querySelectorAll('.match-btn');
+                    let correctRightBtn;
+                    allRightBtns.forEach(rb => {
+                        if (rb.innerText === correctRightValue) correctRightBtn = rb;
+                    });
+
+                    // 2. Označi oba (lijevi i onaj koji je trebao biti desni) kao "error" (crveno)
+                    selectedLeftBtn.classList.add('error-match');
+                    correctRightBtn.classList.add('error-match');
+
+                    // 3. Onemogući ih da se više ne mogu birati
+                    selectedLeftBtn.disabled = true;
+                    correctRightBtn.disabled = true;
+
+                    matchedCount++;
+                    showMessage("Netočno! Točan par je spojen crvenom bojom.");
+                }
+
+                // Resetiraj selekciju za sljedeći pokušaj
+                selectedLeftBtn.classList.remove('selected');
+                selectedLeft = null;
+                selectedLeftBtn = null;
+
+                // Provjeri jesu li svi parovi gotovi (bilo točno ili netočno)
+                if (matchedCount === totalPairs) {
+                    setTimeout(() => nextQuestion(), 2500);
                 }
             };
             rightCol.appendChild(btn);
