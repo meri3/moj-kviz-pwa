@@ -26,6 +26,8 @@ body {
 }
 
 h2 {
+    transition: all 0.3s ease;
+    word-wrap: break-word;
     font-size: 24px;
     font-weight: 700;
     color: #2d3436;
@@ -137,6 +139,7 @@ input[type="text"] {
     pointer-events: none;
     animation: flash 1s ease-in-out forwards; /* Traje samo 1 sekundu */
 }
+
 @keyframes flash {
     0% {
         opacity: 0;
@@ -158,4 +161,3 @@ input[type="text"] {
         transform: translate(-50%, -60%) scale(0.9);
     }
 }
-
