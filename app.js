@@ -3,42 +3,47 @@ let quizData = [];
 let currentQuestionIndex = 0;
 let attempts = 0;
 let score = 0;
-let selectedLeft = null;
-let selectedLeftBtn = null;
 
 async function startQuiz() {
     try {
         const response = await fetch('pitanja.json?v=' + Math.random());
-        if (!response.ok) throw new Error("JSON nije pronađen");
         let allData = await response.json();
-        quizData = allData.sort(() => 0.5 - Math.random()).slice(0, 20);
+
+        // Pretvaramo stare "matching" podatke u obična ABCD pitanja da ništa ne propadne
+        const processedData = [];
+        allData.forEach(q => {
+            if (q.type === "matching") {
+                // Od spajanja radimo više malih ABCD pitanja
+                Object.keys(q.pairs).forEach(key => {
+                    processedData.push({
+                        type: "abcd",
+                        question: `Što odgovara pojmu: ${key}?`,
+                        options: shuffleArray([q.pairs[key], "Pariz", "London", "Berlin", "Madrid"]).slice(0, 4),
+                        correct: q.pairs[key]
+                    });
+                });
+            } else {
+                processedData.push(q);
+            }
+        });
+
+        quizData = processedData.sort(() => 0.5 - Math.random()).slice(0, 20);
         loadQuestion();
     } catch (error) {
         quizContainer.innerHTML = "<h2>Greška pri učitavanju...</h2>";
-        console.error(error);
     }
 }
 
-function showMessage(text, callback) {
-    const msgDiv = document.createElement("div");
-    msgDiv.className = "feedback-popup";
-    msgDiv.innerText = text;
-    document.body.appendChild(msgDiv);
-    setTimeout(() => {
-        msgDiv.remove();
-        if (callback) callback();
-    }, 1000);
+// Pomoćna funkcija za miješanje opcija
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
 }
 
 function loadQuestion() {
-    // 1. POTPUNI RESET STANJA ZA NOVO PITANJE
     attempts = 0;
-    selectedLeft = null;
-    selectedLeftBtn = null;
-    quizContainer.style.pointerEvents = "auto"; // Odblokiraj klikove
-    quizContainer.style.opacity = "1";
-
+    quizContainer.style.pointerEvents = "auto";
     const q = quizData[currentQuestionIndex];
+
     quizContainer.innerHTML = `<h2>${q.question}</h2>`;
 
     if (q.image) {
@@ -48,71 +53,8 @@ function loadQuestion() {
         quizContainer.appendChild(img);
     }
 
-    // --- TIP: MATCHING ---
-    if (q.type === "matching") {
-        const wrapper = document.createElement("div");
-        wrapper.className = "matching-wrapper";
-        const leftCol = document.createElement("div");
-        const rightCol = document.createElement("div");
-        leftCol.className = "matching-col";
-        rightCol.className = "matching-col";
-
-        const leftItems = Object.keys(q.pairs).sort(() => 0.5 - Math.random());
-        const rightItems = Object.values(q.pairs).sort(() => 0.5 - Math.random());
-        let matchedCount = 0;
-        const totalPairs = leftItems.length;
-
-        leftItems.forEach(item => {
-            const btn = document.createElement("button");
-            btn.innerText = item;
-            btn.className = "match-btn";
-            btn.onclick = () => {
-                if (btn.classList.contains('matched') || btn.classList.contains('error-match')) return;
-                leftCol.querySelectorAll('.match-btn').forEach(b => b.classList.remove('selected'));
-                btn.classList.add('selected');
-                selectedLeft = item;
-                selectedLeftBtn = btn;
-            };
-            leftCol.appendChild(btn);
-        });
-
-        rightItems.forEach(item => {
-            const btn = document.createElement("button");
-            btn.innerText = item;
-            btn.className = "match-btn";
-            btn.onclick = () => {
-                if (!selectedLeft || btn.classList.contains('matched') || btn.classList.contains('error-match')) return;
-
-                const correctValue = q.pairs[selectedLeft];
-                if (correctValue === item) {
-                    btn.classList.add('matched');
-                    selectedLeftBtn.classList.add('matched');
-                } else {
-                    rightCol.querySelectorAll('.match-btn').forEach(rb => {
-                        if (rb.innerText === correctValue) rb.classList.add('error-match');
-                    });
-                    selectedLeftBtn.classList.add('error-match');
-                }
-
-                selectedLeftBtn.classList.remove('selected');
-                btn.disabled = true;
-                selectedLeftBtn.disabled = true;
-                selectedLeft = null;
-                matchedCount++;
-
-                if (matchedCount === totalPairs) {
-                    quizContainer.style.pointerEvents = "none";
-                    setTimeout(() => nextQuestion(), 1000);
-                }
-            };
-            rightCol.appendChild(btn);
-        });
-        wrapper.appendChild(leftCol);
-        wrapper.appendChild(rightCol);
-        quizContainer.appendChild(wrapper);
-
-        // --- TIP: ABCD ---
-    } else if (q.type === "abcd") {
+    if (q.type === "abcd") {
+        const optionsWrapper = document.createElement("div");
         q.options.forEach(opt => {
             const btn = document.createElement("button");
             btn.innerText = opt;
@@ -121,10 +63,10 @@ function loadQuestion() {
                 quizContainer.style.pointerEvents = "none";
                 checkAnswer(opt);
             };
-            quizContainer.appendChild(btn);
+            optionsWrapper.appendChild(btn);
         });
+        quizContainer.appendChild(optionsWrapper);
 
-        // --- TIP: INPUT ---
     } else if (q.type === "input") {
         const input = document.createElement("input");
         input.type = "text";
@@ -160,10 +102,13 @@ function checkAnswer(userAnswer) {
     } else {
         attempts++;
         if (attempts === 1) {
-            quizContainer.style.pointerEvents = "auto"; // Vrati klikove za drugi pokušaj
-            showMessage("Još 1 pokušaj!", () => {
+            quizContainer.style.pointerEvents = "auto";
+            showMessage("Pokušaj opet!", () => {
                 const inp = document.getElementById("user-answer");
                 if (inp) { inp.value = ""; inp.focus(); }
+                // Za ABCD samo vratimo klikove
+                const btns = quizContainer.querySelectorAll('.quiz-btn');
+                btns.forEach(b => b.disabled = false);
             });
         } else {
             showMessage(`Točno je: ${q.correct}`, () => nextQuestion());
@@ -171,12 +116,22 @@ function checkAnswer(userAnswer) {
     }
 }
 
+function showMessage(text, callback) {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "feedback-popup";
+    msgDiv.innerText = text;
+    document.body.appendChild(msgDiv);
+    setTimeout(() => {
+        msgDiv.remove();
+        if (callback) callback();
+    }, 1000);
+}
+
 function nextQuestion() {
     currentQuestionIndex++;
     if (currentQuestionIndex < quizData.length) {
         loadQuestion();
     } else {
-        quizContainer.style.pointerEvents = "auto";
         quizContainer.innerHTML = `
             <div style="text-align:center;">
                 <h2>Kviz završen! 🏆</h2>
