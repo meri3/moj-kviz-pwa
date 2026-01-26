@@ -7,17 +7,17 @@
   {
     "type": "input",
     "question": "Palača Malacañang na Luzonu rezidencija je predsjednika koje države?",
-    "correct": "Filipina"
+    "correct": [ "Filipina", "Filipini" ]
   },
   {
     "type": "input",
     "question": "Od čega su mostovi koje u pjesmi ruše Josipa Lisac i Dino Dvornik?",
-    "correct": "Od snova"
+    "correct": [ "Od snova", "snova" ]
   },
   {
     "type": "input",
     "question": "U koji je europski klub Dražen Petrović prešao iz Cibone?",
-    "correct": "Real Madrid"
+    "correct": [ "Real Madrid", "real" ]
   },
   {
     "type": "input",
@@ -27,7 +27,7 @@
   {
     "type": "input",
     "question": "Tko je napisao romane 'Djeca kapetana Granta' i 'Petnaestogodišnji kapetan'?",
-    "correct": "Jules Verne"
+    "correct": [ "Jules Verne", "Verne" ]
   },
   {
     "type": "input",
@@ -37,12 +37,12 @@
   {
     "type": "input",
     "question": "Koga je Donatello oblikovao u bronci, a Michelangelo u mramoru?",
-    "correct": "Davida"
+    "correct": [ "David", "Davida" ]
   },
   {
     "type": "input",
     "question": "Koji je glumac s Benom Affleckom napisao scenarij za 'Dobri Will Hunting'?",
-    "correct": "Matt Damon"
+    "correct": [ "Matt Damon", "Damon" ]
   },
   {
     "type": "abcd",
@@ -99,12 +99,12 @@
   {
     "type": "input",
     "question": "Koji je Grand Slam turnir Roger Federer osvojio samo jedanput?",
-    "correct": "Roland Garros"
+    "correct": [ "Roland Garos", "Roland Garros" ]
   },
   {
     "type": "input",
     "question": "Helenističko razdoblje započelo je smrću kojeg vladara?",
-    "correct": "Aleksandra Velikog"
+    "correct": [ "Aleksandra Velikog", "Aleksandar Veliki" ]
   },
   {
     "type": "input",
@@ -119,12 +119,12 @@
   {
     "type": "input",
     "question": "U kojem filmu Rene Bitorajac glumi ginekologa Danka Babića?",
-    "correct": "Ljudožder vegetarijanac"
+    "correct": [ "Ljudožder vegetarijanac", "Ljudozder vegetarijanac" ]
   },
   {
     "type": "input",
     "question": "Reprezentacija koje nama susjedne države ima najviše olimpijskih zlata u vaterpolu?",
-    "correct": "Mađarske"
+    "correct": [ "Mađarska", "Madarska" ]
   },
   {
     "type": "abcd",
@@ -184,7 +184,7 @@
   {
     "type": "input",
     "question": "Koji je književnik 1961. objavio roman 'Pukovniku nema tko da piše'?",
-    "correct": "Gabriel Garcia Marquez"
+    "correct": [ "Gabriel García Márquez", "Marquez" ]
   },
   {
     "type": "abcd",
@@ -212,22 +212,22 @@
   {
     "type": "input",
     "question": "Tko je glumio Kralja Goblina, Nikolu Teslu i Čovjeka koji je pao na Zemlju?",
-    "correct": "David Bowie"
+    "correct": [ "David Bowie", "Bowie" ]
   },
   {
     "type": "input",
     "question": "Koga je književnog i filmskog junaka odgojila majmunica Kala?",
-    "correct": "Tarzana"
+    "correct": [ "Tarzana", "Tarzan" ]
   },
   {
     "type": "input",
     "question": "Koliko se sinova carice Marije Terezije našlo na njezinom prijestolju?",
-    "correct": "Dva"
+    "correct": [ "Dva", "2" ]
   },
   {
     "type": "input",
     "question": "Koje je površinom najveće slano jezero na svijetu?",
-    "correct": "Kaspijsko jezero"
+    "correct": [ "Kaspijsko jezero", "Kaspijsko" ]
   },
   {
     "type": "abcd",
@@ -250,21 +250,21 @@
   {
     "type": "input",
     "question": "Naziv kojeg umaka na nahuatlu znači 'umak od avokada'?",
-    "correct": "Guacamole"
+    "correct": [ "Guacamole", "Gvakamole" ]
   },
   {
     "type": "input",
     "question": "Koji je od četiri najveća hrvatska grada prvi po abecednom redu?",
-    "correct": "Osijek"
+    "correct": [ "Osijek", "Os" ]
   },
   {
     "type": "input",
     "question": "Indri, fosa i sifaka su endemične životinje kojeg otoka?",
-    "correct": "Madagaskara"
+    "correct": [ "Madagaskara", "Madagaskar" ]
   },
   {
     "type": "input",
-    "question": "Dovršite filmski citat iz Casablance: '...ona uđe u čiji?'",
+    "question": "Dovršite filmski citat iz Casablance: 'Od svih lokala u svim gradovima u cijelom svijetu, ona uđe u čiji?'",
     "correct": "Moj"
   },
   {
@@ -276,5 +276,302 @@
     "type": "input",
     "question": "Koji je najveći Neptunov prirodni satelit?",
     "correct": "Triton"
+  },
+  {
+    "type": "input",
+    "question": "Koji je Apolonov svećenik uzaludno savjetovao Trojancima da ne uvode konja u grad?",
+    "correct": [ "Laokoont", "Laokont" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja je afrička država 2013. zaštitila upotrebu riječi 'rooibos'?",
+    "correct": [ "Južna Afrika", "Juzna Afrika" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj državi djeluje peronistička Stranka pravde?",
+    "correct": [ "Argentina", "Argentini" ]
+  },
+  {
+    "type": "input",
+    "question": "Koga u Pirandellovu djelu traže otac, majka, sin i ostali likovi?",
+    "correct": [ "Autora", "Autor" ]
+  },
+  {
+    "type": "input",
+    "question": "S kojom neovisnom državom graniči indijska savezna država Radžastan?",
+    "correct": [ "Pakistan", "Pakistanom" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je kemijski element ime dobio po tvorcu dinamita?",
+    "correct": "Nobelij"
+  },
+  {
+    "type": "input",
+    "question": "Koje domaće životinje prvenstveno proučavaju felinolozi?",
+    "correct": [ "Mačke", "Macke", "Mačka", "Macka" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja država s Arapskog poluotoka ima medalju sa Svjetskog rukometnog prvenstva?",
+    "correct": "Katar"
+  },
+  {
+    "type": "input",
+    "question": "S kojom je državom Švicarska povezana tunelom Simplon?",
+    "correct": [ "Italija", "Italijom" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja poetesa u pjesmi 'Crna maslina' spominje nevinije ruke?",
+    "correct": [ "Vesna Parun", "Parun" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja se pjevačica obraća 'All the Single Ladies'?",
+    "correct": [ "Beyonce", "Beyoncé" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj su rijeci urotnici utopili Rasputina?",
+    "correct": [ "Neva", "Nevi" ]
+  },
+  {
+    "type": "input",
+    "question": "Što je uz mlijeko, šećer i brašno prijeko potrebno za šnenokle?",
+    "correct": [ "Jaja", "Jaje" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja je magmatska stijena sive boje nazvana po latinskom za zrno?",
+    "correct": "Granit"
+  },
+  {
+    "type": "input",
+    "question": "Koje je boje konstrukcija starog Masleničkog mosta?",
+    "correct": [ "Crvena", "Crvene" ]
+  },
+  {
+    "type": "abcd",
+    "question": "'Da si šutio, ostao bi...' tko u latinskoj sentenciji?",
+    "options": [ "Filozof", "Psiholog", "Teolog" ],
+    "correct": "Filozof"
+  },
+  {
+    "type": "abcd",
+    "question": "Matt LeBlanc je vodio koju britansku TV emisiju?",
+    "options": [ "Top Chef", "Top Gear", "Top of the Pops" ],
+    "correct": "Top Gear"
+  },
+  {
+    "type": "abcd",
+    "question": "Koju ćemo funkciju primijeniti želimo li saznati broj znamenki?",
+    "options": [ "Kvadriranje", "Logaritam", "Sekans" ],
+    "correct": "Logaritam"
+  },
+  {
+    "type": "abcd",
+    "question": "U Morseovoj abecedi, kako se piše slovo A?",
+    "options": [ "crta", "točka-crta", "točka" ],
+    "correct": "točka-crta"
+  },
+  {
+    "type": "input",
+    "question": "Kako se preziva glazbenik Ivan o čijim proljećima piše Vladan Desnica?",
+    "correct": "Galeb"
+  },
+  {
+    "type": "input",
+    "question": "Koji gmazovi, osim nekih guštera, nemaju vidljive vanjske udove?",
+    "correct": [ "Zmije", "Zmija" ]
+  },
+  {
+    "type": "input",
+    "question": "Na kojem se francuskom otoku nalaze gradovi Bastia i Bonifacio?",
+    "correct": [ "Korzika", "Korzici" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja je rijeka u naslovu jedne od najpoznatijih pjesama Halida Bešlića?",
+    "correct": "Miljacka"
+  },
+  {
+    "type": "input",
+    "question": "Koji je pomorac 1492. nazvao otok Guanahani - San Salvador?",
+    "correct": [ "Kristofor Kolumbo", "Kolumbo" ]
+  },
+  {
+    "type": "input",
+    "question": "Po kakvom su plesu poznati Vincent iz Kastva i crkva u Beramu?",
+    "correct": [ "Mrtvacki ples", "Mrtvackom plesu", "Ples mrtvaca" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je naziv za imenice koje imaju samo množinski oblik?",
+    "correct": "Pluralia tantum"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je bivši premijer u vezi s pjevačicom Katy Perry?",
+    "options": [ "Boris Johnson", "Justin Trudeau", "Rishi Sunak" ],
+    "correct": "Rishi Sunak"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je bend 2025. objavio album 'Kažu pčele umiru'?",
+    "options": [ "Opća opasnost", "Hladno pivo", "Parni valjak" ],
+    "correct": "Parni valjak"
+  },
+  {
+    "type": "abcd",
+    "question": "Riječ 'denaskuloj' označava izvorne govornike kojeg jezika?",
+    "options": [ "Esperanta", "latinskog", "starogrčkog" ],
+    "correct": "Esperanta"
+  },
+  {
+    "type": "input",
+    "question": "Koji se naslov Homerova epa koristi kao izraz za dugo putovanje?",
+    "correct": [ "Odiseja", "Odiseje" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je bio prvi planet na koji je sletjela letjelica sa Zemlje?",
+    "correct": [ "Venera", "Veneru" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je drugi naziv za šljaku, silikatnu talinu pri taljenju ruda?",
+    "correct": "Troska"
+  },
+  {
+    "type": "input",
+    "question": "Kako obično nazivamo devenice čiji je glavni sastojak krv?",
+    "correct": [ "Krvavice", "Krvavica" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je Microsoftov program dio Office-a i služi za prezentacije?",
+    "correct": [ "PowerPoint", "Power point" ]
+  },
+  {
+    "type": "abcd",
+    "question": "U kojem selu žive likovi Stanislav, Tatjana i Marinko?",
+    "options": [ "Smiljanu", "Smiljevu", "Smilju" ],
+    "correct": "Smiljevu"
+  },
+  {
+    "type": "abcd",
+    "question": "Kako se u stranim izvorima često naziva crni dupin?",
+    "options": [ "Lažni kit ubojica", "Lažni morski pas", "Lažni tunj" ],
+    "correct": "Lažni kit ubojica"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja je država nazvana po irskom misionaru Svetom Galu?",
+    "options": [ "Luksemburg", "Nizozemska", "Švicarska" ],
+    "correct": "Švicarska"
+  },
+  {
+    "type": "input",
+    "question": "Koji bi se naš glazbenik na standardnom hrvatskom zvao Munja?",
+    "correct": ["Šajeta", "Sajeta" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja se meteorološka pojava metaforički može hvatati i prodavati?",
+    "correct": "Magla"
+  },
+  {
+    "type": "input",
+    "question": "Koji je nogometni trener bio zadnji izbornik reprezentacije SFRJ?",
+    "correct": [ "Ivica Osim", "Osim" ]
+  },
+  {
+    "type": "input",
+    "question": "S kojeg otoka potječe hrvatski plemićki rod Frankopana?",
+    "correct": [ "Krk", "Krka" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj su talijanskoj regiji gradovi Padova i Verona?",
+    "correct": "Veneto"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja japanska riječ znači i 'hura!' i 'deset tisuća godina'?",
+    "options": [ "Banzai", "Bazinga", "Bonsai" ],
+    "correct": "Banzai"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je dijalekt istarskog Labina zaštićen kao kulturno dobro?",
+    "options": [ "cakavica", "cekavica", "cokavica" ],
+    "correct": "cakavica"
+  },
+  {
+    "type": "input",
+    "question": "Koja je jedina većinski slavenska alpska država?",
+    "correct": "Slovenija"
+  },
+  {
+    "type": "input",
+    "question": "Koja djevojčica stanuje u kući zvanoj Pipinovac?",
+    "correct": [ "Pipi Duga Čarapa", "Pipi" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj Kerempuhovoj predstavi Tarik Filipović glumi Sir Olivera?",
+    "correct": "Alan Ford"
+  },
+  {
+    "type": "input",
+    "question": "Kako se po latinskom za jadan i bijedan zove vrlo niska plaća?",
+    "correct": "Mizerija"
+  },
+  {
+    "type": "input",
+    "question": "Na kojoj se podlozi igra teniski turnir u Umagu?",
+    "correct": [ "Zemlja", "Zemljanoj", "Zemlji" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je sunarodnjak Solskjaera 2023. osvojio Premier ligu?",
+    "correct": [ "Haaland", "Haland" ]
+  },
+  {
+    "type": "input",
+    "question": "Koje glagolsko vrijeme označava radnju prije druge radnje u prošlosti?",
+    "correct": [ "Pluskvamperfekt", "Pretprošlo vrijeme" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj državi su Crno jezero i Plavsko jezero?",
+    "correct": [ "Crna Gora", "Crnoj Gori" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je broj na kacigi nosio vatrogasac Guy Montag?",
+    "correct": [ "451", "četiri pet jedan" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji se njemački slatki božićni kruh često puni marcipanom?",
+    "correct": [ "Stollen", "Štolen" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj je državi 2011. godine ubijen Osama bin Laden?",
+    "correct": "Pakistan"
+  },
+  {
+    "type": "input",
+    "question": "Koji je grad u svojim romanima osnovao Jose Arcadio Buendia?",
+    "correct": "Macondo"
+  },
+  {
+    "type": "input",
+    "question": "Koji je tenisač organizirao Adria Tour tijekom pandemije?",
+    "correct": [ "Novak Đoković", "Djokovic", "Đoković" ]
   }
 ]
