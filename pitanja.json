@@ -140,9 +140,9 @@
   },
   {
     "type": "abcd",
-    "question": "Što se od navedenog može 'štrukati'?",
+    "question": "Što se od navedenog ne može 'štrukati'?",
     "options": [ "Banana", "Kikiriki", "Limun" ],
-    "correct": "Limun"
+    "correct": "Kikiriki"
   },
   {
     "type": "abcd",
