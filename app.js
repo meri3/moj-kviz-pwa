@@ -1,4 +1,5 @@
-﻿const quizContainer = document.getElementById('quiz-container');
+﻿alert("Kod je osvježen!");
+const quizContainer = document.getElementById('quiz-container');
 let quizData = [];
 let currentQuestionIndex = 0;
 let score = 0;
