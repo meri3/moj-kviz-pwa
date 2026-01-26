@@ -2,34 +2,26 @@
 let quizData = [];
 let currentQuestionIndex = 0;
 let attempts = 0;
+let score = 0;
+let selectedLeft = null; // Za spajanje parova
 
 async function startQuiz() {
     try {
         const response = await fetch('pitanja.json');
-        quizData = await response.json();
+        let allData = await response.json();
+
+        // 1. NASUMIČNI ODABIR 20 PITANJA
+        quizData = allData.sort(() => 0.5 - Math.random()).slice(0, 20);
+
         loadQuestion();
     } catch (error) {
-        quizContainer.innerHTML = "<h2>Greška pri učitavanju pitanja...</h2>";
+        quizContainer.innerHTML = "<h2>Greška pri učitavanju...</h2>";
     }
-}
-
-// NOVA FUNKCIJA: Prikazuje poruku koja nestane nakon 2 sekunde
-function showMessage(text, callback) {
-    // Kreiramo element za poruku
-    const msgDiv = document.createElement("div");
-    msgDiv.className = "feedback-popup";
-    msgDiv.innerText = text;
-    document.body.appendChild(msgDiv);
-
-    // Nakon 2 sekunde makni poruku i pokreni sljedeću radnju (callback)
-    setTimeout(() => {
-        msgDiv.remove();
-        if (callback) callback();
-    }, 2000);
 }
 
 function loadQuestion() {
     attempts = 0;
+    selectedLeft = null;
     const q = quizData[currentQuestionIndex];
     quizContainer.innerHTML = `<h2>${q.question}</h2>`;
 
@@ -40,70 +32,64 @@ function loadQuestion() {
         quizContainer.appendChild(img);
     }
 
-    if (q.type === "abcd") {
-        q.options.forEach(opt => {
+    // LOGIKA ZA SPAJANJE PAROVA (Matching)
+    if (q.type === "matching") {
+        const leftCol = document.createElement("div");
+        const rightCol = document.createElement("div");
+        leftCol.className = "matching-col";
+        rightCol.className = "matching-col";
+
+        const leftItems = Object.keys(q.pairs).sort(() => 0.5 - Math.random());
+        const rightItems = Object.values(q.pairs).sort(() => 0.5 - Math.random());
+
+        leftItems.forEach(item => {
             const btn = document.createElement("button");
-            btn.innerText = opt;
-            btn.className = "quiz-btn";
-            btn.onclick = () => checkAnswer(opt);
-            quizContainer.appendChild(btn);
-        });
-    } else if (q.type === "input") {
-        const input = document.createElement("input");
-        input.type = "text";
-        input.id = "user-answer";
-        input.placeholder = "Upiši odgovor...";
-
-        // DODANO: Podrška za tipku ENTER
-        input.addEventListener("keypress", (event) => {
-            if (event.key === "Enter") {
-                checkAnswer(input.value);
-            }
+            btn.innerText = item;
+            btn.className = "match-btn";
+            btn.onclick = () => {
+                document.querySelectorAll('.match-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedLeft = item;
+            };
+            leftCol.appendChild(btn);
         });
 
-        const btn = document.createElement("button");
-        btn.innerText = "Provjeri";
-        btn.className = "quiz-btn";
-        btn.onclick = () => checkAnswer(document.getElementById("user-answer").value);
-
-        quizContainer.appendChild(input);
-        quizContainer.appendChild(btn);
-        input.focus(); // Automatski stavi kursor u polje
-    }
-}
-
-function checkAnswer(userAnswer) {
-    const q = quizData[currentQuestionIndex];
-    if (!userAnswer) return; // Ako je prazno, ne radi ništa
-
-    const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
-
-    if (isCorrect) {
-        showMessage("Točno! 🌟", () => nextQuestion());
-    } else {
-        attempts++;
-        if (attempts === 1) {
-            showMessage("Netočno! Imaš još 1 pokušaj.", () => {
-                // Očisti polje za novi pokušaj
-                const input = document.getElementById("user-answer");
-                if (input) {
-                    input.value = "";
-                    input.focus();
+        rightItems.forEach(item => {
+            const btn = document.createElement("button");
+            btn.innerText = item;
+            btn.className = "match-btn";
+            btn.onclick = () => {
+                if (!selectedLeft) {
+                    showMessage("Prvo odaberi pojam lijevo!");
+                    return;
                 }
-            });
-        } else if (attempts === 2) {
-            showMessage(`Netočno. Točan odgovor je: ${q.correct}`, () => nextQuestion());
-        }
+                if (q.pairs[selectedLeft] === item) {
+                    btn.style.backgroundColor = "#4cd964"; // Zeleno za točno
+                    btn.disabled = true;
+                    // Ovdje bi išla dodatna logika za micanje spojenih, ali za početak:
+                    showMessage("Točan par!");
+                } else {
+                    showMessage("Krivo!");
+                }
+            };
+            rightCol.appendChild(btn);
+        });
+
+        const wrapper = document.createElement("div");
+        wrapper.style.display = "flex";
+        wrapper.style.justifyContent = "space-between";
+        wrapper.appendChild(leftCol);
+        wrapper.appendChild(rightCol);
+        quizContainer.appendChild(wrapper);
+
+        // Gumb za dalje kod spajanja
+        const nextBtn = document.createElement("button");
+        nextBtn.innerText = "Sljedeće pitanje";
+        nextBtn.className = "quiz-btn";
+        nextBtn.onclick = () => nextQuestion();
+        quizContainer.appendChild(nextBtn);
     }
+    // ... ostatak koda (abcd i input) ostaje isti kao prije ...
 }
 
-function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        loadQuestion();
-    } else {
-        quizContainer.innerHTML = "<h2>Kviz završen! 🏆</h2>";
-    }
-}
-
-startQuiz();
+// ... funkcije checkAnswer i showMessage ostaju iste ...

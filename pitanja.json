@@ -34,7 +34,25 @@
     "type": "input",
     "question": "Kako se zove glavni grad Njemačke?",
     "correct": "Berlin"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je glavni grad Hrvatske?",
+    "options": [ "Split", "Zagreb", "Rijeka", "Osijek" ],
+    "correct": "Zagreb"
+  },
+  {
+    "type": "matching",
+    "question": "Spoji države s njihovim glavnim gradovima:",
+    "pairs": {
+      "Hrvatska": "Zagreb",
+      "Francuska": "Pariz",
+      "Italija": "Rim",
+      "Njemačka": "Berlin",
+      "Španjolska": "Madrid",
+      "Austrija": "Beč",
+      "Mađarska": "Budimpešta",
+      "Slovenija": "Ljubljana"
+    }
   }
-
 ]
-
