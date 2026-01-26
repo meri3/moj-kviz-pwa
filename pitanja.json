@@ -18,28 +18,15 @@
     "correct": "Zagreb"
   },
   {
-    "type": "abcd",
-    "question": "Koji je ovo uređaj?",
-    "image": "images/pitanje1.jpg",
-    "options": [ "Televizor", "Kompjuter", "Radio", "Kalkulator" ],
-    "correct": "Kompjuter"
-  },
-  {
-    "type": "input",
-    "question": "Što je prikazano na ovoj slici?",
-    "image": "images/pitanje2.jpg",
-    "correct": "Slanina"
-  },
-  {
     "type": "input",
     "question": "Kako se zove glavni grad Njemačke?",
     "correct": "Berlin"
   },
   {
     "type": "abcd",
-    "question": "Koji je glavni grad Hrvatske?",
-    "options": [ "Split", "Zagreb", "Rijeka", "Osijek" ],
-    "correct": "Zagreb"
+    "question": "Koji je glavni grad Italije?",
+    "options": [ "Milano", "Rim", "Napulj", "Venecija" ],
+    "correct": "Rim"
   },
   {
     "type": "matching",
@@ -54,5 +41,171 @@
       "Mađarska": "Budimpešta",
       "Slovenija": "Ljubljana"
     }
+  },
+  {
+    "type": "abcd",
+    "question": "Koja je najveća pustinja na svijetu?",
+    "options": [ "Gobi", "Sahara", "Antarktika", "Kalahari" ],
+    "correct": "Antarktika"
+  },
+  {
+    "type": "input",
+    "question": "Upiši ime najvećeg planeta u Sunčevom sustavu:",
+    "correct": "Jupiter"
+  },
+  {
+    "type": "abcd",
+    "question": "Tko je naslikao Mona Lisu?",
+    "options": [ "Picasso", "Van Gogh", "Leonardo da Vinci", "Dali" ],
+    "correct": "Leonardo da Vinci"
+  },
+  {
+    "type": "input",
+    "question": "Kako se zove kemijski simbol za zlato?",
+    "correct": "Au"
+  },
+  {
+    "type": "matching",
+    "question": "Spoji životinje s njihovim glasanjem:",
+    "pairs": {
+      "Pas": "Lavež",
+      "Mačka": "Mijaukanje",
+      "Krava": "Mukanje",
+      "Konj": "Njistanje",
+      "Lav": "Rika",
+      "Ovca": "Blejanje",
+      "Vuk": "Zavijanje",
+      "Pčela": "Zujanje"
+    }
+  },
+  {
+    "type": "abcd",
+    "question": "Koliko kontinenata postoji na Zemlji?",
+    "options": [ "5", "6", "7", "8" ],
+    "correct": "7"
+  },
+  {
+    "type": "input",
+    "question": "Koja rijeka protječe kroz London?",
+    "correct": "Temza"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja je najduža rijeka na svijetu?",
+    "options": [ "Nil", "Amazon", "Dunav", "Mississippi" ],
+    "correct": "Amazon"
+  },
+  {
+    "type": "input",
+    "question": "Upiši ime našeg najvećeg otoka (površinom):",
+    "correct": "Cres"
+  },
+  {
+    "type": "matching",
+    "question": "Spoji sportaše sa sportovima:",
+    "pairs": {
+      "Modrić": "Nogomet",
+      "Ivanišević": "Tenis",
+      "Jordan": "Košarka",
+      "Hamilton": "Formula 1",
+      "Bolt": "Atletika",
+      "Phelps": "Plivanje",
+      "Kostelić": "Skijanje",
+      "Balić": "Rukomet"
+    }
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je najtvrđi prirodni materijal?",
+    "options": [ "Zlato", "Željezo", "Dijamant", "Bakar" ],
+    "correct": "Dijamant"
+  },
+  {
+    "type": "input",
+    "question": "Kako se zove proces kojim biljke proizvode hranu?",
+    "correct": "Fotosinteza"
+  },
+  {
+    "type": "abcd",
+    "question": "U kojoj se državi nalaze piramide u Gizi?",
+    "options": [ "Meksiko", "Egipat", "Peru", "Grčka" ],
+    "correct": "Egipat"
+  },
+  {
+    "type": "input",
+    "question": "Koji je najviši vrh na svijetu?",
+    "correct": "Mount Everest"
+  },
+  {
+    "type": "matching",
+    "question": "Spoji autore s njihovim djelima:",
+    "pairs": {
+      "Ivana Brlić Mažuranić": "Priče iz davnine",
+      "August Šenoa": "Zlatarovo zlato",
+      "Miroslav Krleža": "Povratak Filipa Latinovicza",
+      "Dante Alighieri": "Božanstvena komedija",
+      "Shakespeare": "Hamlet",
+      "Moliere": "Škrtac",
+      "Homer": "Ilijada",
+      "Marin Držić": "Dundo Maroje"
+    }
+  },
+  {
+    "type": "abcd",
+    "question": "Koji ocean je najveći?",
+    "options": [ "Atlantski", "Indijski", "Tihi", "Arktički" ],
+    "correct": "Tihi"
+  },
+  {
+    "type": "input",
+    "question": "Kako se preziva izumitelj izmjenične struje rođen u Smiljanu?",
+    "correct": "Tesla"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja država ima oblik čizme?",
+    "options": [ "Grčka", "Italija", "Hrvatska", "Španjolska" ],
+    "correct": "Italija"
+  },
+  {
+    "type": "input",
+    "question": "Upiši boju koju dobijemo miješanjem plave i žute:",
+    "correct": "Zelena"
+  },
+  {
+    "type": "matching",
+    "question": "Spoji instrumente s vrstama:",
+    "pairs": {
+      "Klavir": "Tipke",
+      "Gitara": "Žice",
+      "Bubanj": "Udaraljke",
+      "Flauta": "Puhački",
+      "Violina": "Gudački",
+      "Truba": "Limeni puhački",
+      "Harfa": "Žičani",
+      "Harmonika": "Mjeh"
+    }
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je planet najbliži Suncu?",
+    "options": [ "Venera", "Mars", "Merkur", "Zemlja" ],
+    "correct": "Merkur"
+  },
+  {
+    "type": "input",
+    "question": "Kako se zove najpoznatiji toranj u Parizu?",
+    "correct": "Eiffelov toranj"
+  },
+  {
+    "type": "abcd",
+    "question": "Koliko minuta ima jedan sat?",
+    "options": [ "50", "60", "100", "120" ],
+    "correct": "60"
+  },
+  {
+    "type": "input",
+    "question": "Upiši ime najveće šume na svijetu (prašuma):",
+    "correct": "Amazonija"
   }
 ]

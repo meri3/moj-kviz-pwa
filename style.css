@@ -1,4 +1,5 @@
-﻿body {
+﻿/* OSNOVNE POSTAVKE */
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f2f2f7; /* iOS siva pozadina */
     margin: 0;
@@ -11,14 +12,7 @@
 #app {
     width: 100%;
     max-width: 450px;
-    margin-top: 10px; /* Smanjeno s 40px na 10px */
-}
-
-h1 {
-    text-align: center;
-    color: #000;
-    font-size: 28px;
-    margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 h2 {
@@ -26,6 +20,7 @@ h2 {
     margin-bottom: 20px;
     color: #1c1c1e;
     text-align: center;
+    line-height: 1.3;
 }
 
 #quiz-container {
@@ -35,6 +30,7 @@ h2 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
+/* GUMBI ZA ABCD I OPĆENITO */
 .quiz-btn {
     width: 100%;
     padding: 18px;
@@ -54,6 +50,7 @@ h2 {
         background-color: #005ecb;
     }
 
+/* INPUT POLJE */
 input[type="text"] {
     width: 100%;
     padding: 15px;
@@ -69,23 +66,61 @@ input[type="text"] {
         border-color: #007aff;
     }
 
-.feedback {
-    margin-top: 15px;
-    font-weight: 500;
-    text-align: center;
-}
-
+/* SLIKE */
 .quiz-image {
     width: 100%;
-    max-width: 300px; /* Da ne bude prevelika na iPadu ili kompu */
+    max-width: 300px;
     height: auto;
     border-radius: 12px;
-    margin: 10px auto 20px auto;
+    margin: 0 auto 20px auto;
     display: block;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Stil za skočnu poruku (feedback) */
+/* NOVO: STIL ZA SPAJANJE PAROVA (MATCHING) */
+.matching-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.matching-col {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.match-btn {
+    width: 100%;
+    padding: 12px 8px;
+    margin: 5px 0;
+    border: 1px solid #007aff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #007aff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    min-height: 50px;
+    transition: all 0.2s;
+}
+
+    /* Kad je gumb s lijeve strane odabran */
+    .match-btn.selected {
+        background-color: #007aff;
+        color: white;
+    }
+
+    /* Kad je par točno spojen */
+    .match-btn.matched {
+        background-color: #4cd964 !important; /* iOS zelena */
+        color: white !important;
+        border-color: #4cd964 !important;
+        opacity: 0.6;
+    }
+
+/* FEEDBACK POPUP */
 .feedback-popup {
     position: fixed;
     top: 50%;
@@ -99,7 +134,8 @@ input[type="text"] {
     font-weight: bold;
     text-align: center;
     z-index: 1000;
-    animation: fadeInOut 2s ease-in-out;
+    pointer-events: none; /* Da ne smeta klikovima dok nestaje */
+    animation: fadeInOut 2s ease-in-out forwards;
 }
 
 @keyframes fadeInOut {
@@ -118,4 +154,13 @@ input[type="text"] {
     100% {
         opacity: 0;
     }
+}
+
+/* REZULTAT NA KRAJU */
+.score-display {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #1c1c1e;
 }
