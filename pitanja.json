@@ -1,211 +1,280 @@
 ﻿[
   {
-    "type": "abcd",
-    "question": "Koji je ovo uređaj?",
-    "image": "images/pitanje1.jpg",
-    "options": [ "Televizor", "Kompjuter", "Radio", "Kalkulator" ],
-    "correct": "Kompjuter"
+    "type": "input",
+    "question": "Kojim se germanizmom nazivaju spuštena stopala?",
+    "correct": "Platfus"
   },
   {
     "type": "input",
-    "question": "Što je prikazano na ovoj slici?",
-    "image": "images/pitanje2.jpg",
-    "correct": "Slanina"
+    "question": "Palača Malacañang na Luzonu rezidencija je predsjednika koje države?",
+    "correct": "Filipina"
   },
   {
     "type": "input",
-    "question": "Koji je glavni grad Hrvatske?",
-    "correct": "Zagreb"
+    "question": "Od čega su mostovi koje u pjesmi ruše Josipa Lisac i Dino Dvornik?",
+    "correct": "Od snova"
   },
   {
     "type": "input",
-    "question": "Kako se zove glavni grad Njemačke?",
-    "correct": "Berlin"
-  },
-  {
-    "type": "abcd",
-    "question": "Koji je glavni grad Italije?",
-    "options": [ "Milano", "Rim", "Napulj", "Venecija" ],
-    "correct": "Rim"
-  },
-  {
-    "type": "matching",
-    "question": "Spoji države s njihovim glavnim gradovima:",
-    "pairs": {
-      "Hrvatska": "Zagreb",
-      "Francuska": "Pariz",
-      "Italija": "Rim",
-      "Njemačka": "Berlin",
-      "Španjolska": "Madrid",
-      "Austrija": "Beč",
-      "Mađarska": "Budimpešta",
-      "Slovenija": "Ljubljana"
-    }
-  },
-  {
-    "type": "abcd",
-    "question": "Koja je najveća pustinja na svijetu?",
-    "options": [ "Gobi", "Sahara", "Antarktika", "Kalahari" ],
-    "correct": "Antarktika"
+    "question": "U koji je europski klub Dražen Petrović prešao iz Cibone?",
+    "correct": "Real Madrid"
   },
   {
     "type": "input",
-    "question": "Upiši ime najvećeg planeta u Sunčevom sustavu:",
-    "correct": "Jupiter"
+    "question": "Koja je rijeka plovna od ušća do Obrovca?",
+    "correct": "Zrmanja"
+  },
+  {
+    "type": "input",
+    "question": "Tko je napisao romane 'Djeca kapetana Granta' i 'Petnaestogodišnji kapetan'?",
+    "correct": "Jules Verne"
+  },
+  {
+    "type": "input",
+    "question": "Engleski kralj Henrik IV. bio je prvi vladar iz koje dinastije?",
+    "correct": "Lancaster"
+  },
+  {
+    "type": "input",
+    "question": "Koga je Donatello oblikovao u bronci, a Michelangelo u mramoru?",
+    "correct": "Davida"
+  },
+  {
+    "type": "input",
+    "question": "Koji je glumac s Benom Affleckom napisao scenarij za 'Dobri Will Hunting'?",
+    "correct": "Matt Damon"
   },
   {
     "type": "abcd",
-    "question": "Tko je naslikao Mona Lisu?",
-    "options": [ "Picasso", "Van Gogh", "Leonardo da Vinci", "Dali" ],
-    "correct": "Leonardo da Vinci"
-  },
-  {
-    "type": "input",
-    "question": "Kako se zove kemijski simbol za zlato?",
-    "correct": "Au"
-  },
-  {
-    "type": "matching",
-    "question": "Spoji životinje s njihovim glasanjem:",
-    "pairs": {
-      "Pas": "Lavež",
-      "Mačka": "Mijaukanje",
-      "Krava": "Mukanje",
-      "Konj": "Njistanje",
-      "Lav": "Rika",
-      "Ovca": "Blejanje",
-      "Vuk": "Zavijanje",
-      "Pčela": "Zujanje"
-    }
+    "question": "Bivša premijerka koje države je u studenom 2025. osuđena na smrt?",
+    "options": [ "Bangladeša", "Malezije", "Pakistana" ],
+    "correct": "Bangladeša"
   },
   {
     "type": "abcd",
-    "question": "Koliko kontinenata postoji na Zemlji?",
-    "options": [ "5", "6", "7", "8" ],
-    "correct": "7"
-  },
-  {
-    "type": "input",
-    "question": "Koja rijeka protječe kroz London?",
-    "correct": "Temza"
+    "question": "Koji se knjižni lik pojavljuje u nekolicini romana H. de Balzaca?",
+    "options": [ "Edmond Dantes", "Etienne Lantier", "Eugène de Rastignac" ],
+    "correct": "Eugène de Rastignac"
   },
   {
     "type": "abcd",
-    "question": "Koja je najduža rijeka na svijetu?",
-    "options": [ "Nil", "Amazon", "Dunav", "Mississippi" ],
-    "correct": "Amazon"
-  },
-  {
-    "type": "input",
-    "question": "Upiši ime našeg najvećeg otoka (površinom):",
-    "correct": "Cres"
-  },
-  {
-    "type": "matching",
-    "question": "Spoji sportaše sa sportovima:",
-    "pairs": {
-      "Modrić": "Nogomet",
-      "Ivanišević": "Tenis",
-      "Jordan": "Košarka",
-      "Hamilton": "Formula 1",
-      "Bolt": "Atletika",
-      "Phelps": "Plivanje",
-      "Kostelić": "Skijanje",
-      "Balić": "Rukomet"
-    }
+    "question": "S rta Oštra pruža se pogled na obalu koje nama susjedne države?",
+    "options": [ "Bosne i Hercegovine", "Crne Gore", "Slovenije" ],
+    "correct": "Crne Gore"
   },
   {
     "type": "abcd",
-    "question": "Koji je najtvrđi prirodni materijal?",
-    "options": [ "Zlato", "Željezo", "Dijamant", "Bakar" ],
-    "correct": "Dijamant"
-  },
-  {
-    "type": "input",
-    "question": "Kako se zove proces kojim biljke proizvode hranu?",
-    "correct": "Fotosinteza"
+    "question": "Kako se zvala maskota Svjetskog nogometnog prvenstva 1990.?",
+    "options": [ "Ciao", "Hello", "Hola" ],
+    "correct": "Ciao"
   },
   {
     "type": "abcd",
-    "question": "U kojoj se državi nalaze piramide u Gizi?",
-    "options": [ "Meksiko", "Egipat", "Peru", "Grčka" ],
-    "correct": "Egipat"
-  },
-  {
-    "type": "input",
-    "question": "Koji je najviši vrh na svijetu?",
-    "correct": "Mount Everest"
-  },
-  {
-    "type": "matching",
-    "question": "Spoji autore s njihovim djelima:",
-    "pairs": {
-      "Ivana Brlić Mažuranić": "Priče iz davnine",
-      "August Šenoa": "Zlatarovo zlato",
-      "Miroslav Krleža": "Povratak Filipa Latinovicza",
-      "Dante Alighieri": "Božanstvena komedija",
-      "Shakespeare": "Hamlet",
-      "Moliere": "Škrtac",
-      "Homer": "Ilijada",
-      "Marin Držić": "Dundo Maroje"
-    }
+    "question": "Što se u likovnim umjetnostima razvilo između visoke renesanse i baroka?",
+    "options": [ "Manirizam", "Marinizam", "Minimalizam" ],
+    "correct": "Manirizam"
   },
   {
     "type": "abcd",
-    "question": "Koji ocean je najveći?",
-    "options": [ "Atlantski", "Indijski", "Tihi", "Arktički" ],
-    "correct": "Tihi"
-  },
-  {
-    "type": "input",
-    "question": "Kako se preziva izumitelj izmjenične struje rođen u Smiljanu?",
-    "correct": "Tesla"
+    "question": "Klupski program FRKA ugostio je Ilana Kabilja, Denis & Denis i:",
+    "options": [ "Krankšvester", "Nipplepeople", "Svemirko" ],
+    "correct": "Nipplepeople"
   },
   {
     "type": "abcd",
-    "question": "Koja država ima oblik čizme?",
-    "options": [ "Grčka", "Italija", "Hrvatska", "Španjolska" ],
-    "correct": "Italija"
+    "question": "Radnja kojeg filma počinje 1996. godine?",
+    "options": [ "Neprijatelj pred vratima", "Schindlerova lista", "Titanic" ],
+    "correct": "Titanic"
   },
   {
     "type": "input",
-    "question": "Upiši boju koju dobijemo miješanjem plave i žute:",
-    "correct": "Zelena"
+    "question": "Na kojem je otoku Gunnbjørn Fjeld najviša planina?",
+    "correct": "Grenland"
   },
   {
-    "type": "matching",
-    "question": "Spoji instrumente s vrstama:",
-    "pairs": {
-      "Klavir": "Tipke",
-      "Gitara": "Žice",
-      "Bubanj": "Udaraljke",
-      "Flauta": "Puhački",
-      "Violina": "Gudački",
-      "Truba": "Limeni puhački",
-      "Harfa": "Žičani",
-      "Harmonika": "Mjeh"
-    }
+    "type": "input",
+    "question": "Jedini pozitivni cjelobrojni djelitelji broja 883 su broj 1 i koji još?",
+    "correct": "883"
+  },
+  {
+    "type": "input",
+    "question": "Koji je Grand Slam turnir Roger Federer osvojio samo jedanput?",
+    "correct": "Roland Garros"
+  },
+  {
+    "type": "input",
+    "question": "Helenističko razdoblje započelo je smrću kojeg vladara?",
+    "correct": "Aleksandra Velikog"
+  },
+  {
+    "type": "input",
+    "question": "U mitološkom Midgardu žive ljudi, a tko živi u Asgardu?",
+    "correct": "Bogovi"
+  },
+  {
+    "type": "input",
+    "question": "Naziv koje se brojčane križaljke prevodi kao 'jednoznamenkasti broj'?",
+    "correct": "Sudoku"
+  },
+  {
+    "type": "input",
+    "question": "U kojem filmu Rene Bitorajac glumi ginekologa Danka Babića?",
+    "correct": "Ljudožder vegetarijanac"
+  },
+  {
+    "type": "input",
+    "question": "Reprezentacija koje nama susjedne države ima najviše olimpijskih zlata u vaterpolu?",
+    "correct": "Mađarske"
   },
   {
     "type": "abcd",
-    "question": "Koji je planet najbliži Suncu?",
-    "options": [ "Venera", "Mars", "Merkur", "Zemlja" ],
-    "correct": "Merkur"
-  },
-  {
-    "type": "input",
-    "question": "Kako se zove najpoznatiji toranj u Parizu?",
-    "correct": "Eiffelov toranj"
+    "question": "U rečenici o 'Arslanu gorskom mišu', Arslan označava koju životinju?",
+    "options": [ "Kuna", "Lav", "Orao" ],
+    "correct": "Lav"
   },
   {
     "type": "abcd",
-    "question": "Koliko minuta ima jedan sat?",
-    "options": [ "50", "60", "100", "120" ],
-    "correct": "60"
+    "question": "Koji grad ima skloništa za baš sve svoje stanovnike?",
+    "options": [ "Berlinu", "Helsinkiju", "Pragu" ],
+    "correct": "Helsinkiju"
+  },
+  {
+    "type": "abcd",
+    "question": "Što se od navedenog može 'štrukati'?",
+    "options": [ "Banana", "Kikiriki", "Limun" ],
+    "correct": "Limun"
+  },
+  {
+    "type": "abcd",
+    "question": "Lily, Oscar i Eddy su likovi iz koje popularne aplikacije?",
+    "options": [ "Duolingo", "Finch", "Khan Academy" ],
+    "correct": "Duolingo"
+  },
+  {
+    "type": "abcd",
+    "question": "Nogometni klub FCSB je bivša...?",
+    "options": [ "Mladost 127", "Parma", "Steaua" ],
+    "correct": "Steaua"
   },
   {
     "type": "input",
-    "question": "Upiši ime najveće šume na svijetu (prašuma):",
-    "correct": "Amazonija"
+    "question": "U kojoj pjesmi Parnog valjka junakinja rinta u nekoj lijevoj firmi?",
+    "correct": "Neda"
+  },
+  {
+    "type": "input",
+    "question": "Koji je lik iz serije 'Looney Tunes' najbrži miš u cijelom Meksiku?",
+    "correct": "Speedy Gonzales"
+  },
+  {
+    "type": "input",
+    "question": "Koje je povrće glavni sastojak sekeli-gulaša?",
+    "correct": "Kupus"
+  },
+  {
+    "type": "input",
+    "question": "Koji je glavni grad u blizini ušća rijeke Tejo?",
+    "correct": "Lisabon"
+  },
+  {
+    "type": "input",
+    "question": "Koji je grad bio najistočnija točka do koje je vozio Orient Express?",
+    "correct": "Istanbul"
+  },
+  {
+    "type": "input",
+    "question": "Koji je književnik 1961. objavio roman 'Pukovniku nema tko da piše'?",
+    "correct": "Gabriel Garcia Marquez"
+  },
+  {
+    "type": "abcd",
+    "question": "U pjesmi Zenica Blues spominje se koliko godina strogog zatvora?",
+    "options": [ "Deset", "Dvanaest", "Sedam" ],
+    "correct": "Dvanaest"
+  },
+  {
+    "type": "abcd",
+    "question": "Gdje se održava najveći sajam izrade gudačkih instrumenata?",
+    "options": [ "U Cremoni", "U Ferrari", "U Mantovi" ],
+    "correct": "U Cremoni"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja je kartaška igra izvorno poznata kao Vingt-et-un?",
+    "options": [ "Blackjack", "Bridge", "Preference" ],
+    "correct": "Blackjack"
+  },
+  {
+    "type": "input",
+    "question": "Koji je nogometni klub 127 godina igrao na Goodison Parku?",
+    "correct": "Everton"
+  },
+  {
+    "type": "input",
+    "question": "Tko je glumio Kralja Goblina, Nikolu Teslu i Čovjeka koji je pao na Zemlju?",
+    "correct": "David Bowie"
+  },
+  {
+    "type": "input",
+    "question": "Koga je književnog i filmskog junaka odgojila majmunica Kala?",
+    "correct": "Tarzana"
+  },
+  {
+    "type": "input",
+    "question": "Koliko se sinova carice Marije Terezije našlo na njezinom prijestolju?",
+    "correct": "Dva"
+  },
+  {
+    "type": "input",
+    "question": "Koje je površinom najveće slano jezero na svijetu?",
+    "correct": "Kaspijsko jezero"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je grad 1667. dobio organizirano ulično osvjetljenje?",
+    "options": [ "Moskva", "Pariz", "Rim" ],
+    "correct": "Pariz"
+  },
+  {
+    "type": "abcd",
+    "question": "Poseban dijalekt kojeg istarskog naselja je cakavica?",
+    "options": [ "Labina", "Medulina", "Pazina" ],
+    "correct": "Labina"
+  },
+  {
+    "type": "abcd",
+    "question": "Frederick Mitchell-Hedges tvrdio je da je 1924. pronašao...?",
+    "options": [ "Kristalnu lubanju", "Sveti gral", "Zavjetni kovčeg" ],
+    "correct": "Kristalnu lubanju"
+  },
+  {
+    "type": "input",
+    "question": "Naziv kojeg umaka na nahuatlu znači 'umak od avokada'?",
+    "correct": "Guacamole"
+  },
+  {
+    "type": "input",
+    "question": "Koji je od četiri najveća hrvatska grada prvi po abecednom redu?",
+    "correct": "Osijek"
+  },
+  {
+    "type": "input",
+    "question": "Indri, fosa i sifaka su endemične životinje kojeg otoka?",
+    "correct": "Madagaskara"
+  },
+  {
+    "type": "input",
+    "question": "Dovršite filmski citat iz Casablance: '...ona uđe u čiji?'",
+    "correct": "Moj"
+  },
+  {
+    "type": "input",
+    "question": "Koji ćemo broj dobiti zbrojimo li znamenke u broju 2026?",
+    "correct": "10"
+  },
+  {
+    "type": "input",
+    "question": "Koji je najveći Neptunov prirodni satelit?",
+    "correct": "Triton"
   }
 ]
