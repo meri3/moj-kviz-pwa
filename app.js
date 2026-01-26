@@ -198,11 +198,17 @@ function renderFinalScore() {
             <h2>Kviz završen! 🏆</h2>
             <p style="font-size: 20px;">${poruka}</p>
             <p style="font-size:40px; font-weight:bold; color:#6a11cb; margin: 20px 0;">${finalScore} / 20</p>
-            <button id="restart-btn" class="quiz-btn">Igraj ponovno</button>
+            <button type="button" class="quiz-btn restart-trigger">Igraj ponovno</button>
         </div>
     `;
-    document.getElementById('restart-btn').onclick = () => window.location.reload();
 }
 
-// POKREĆE UVODNI EKRAN
+// Globalni slušač za gumb "Igraj ponovno"
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('restart-trigger')) {
+        window.location.reload();
+    }
+});
+
+// Pokreni uvodni ekran
 showStartScreen();
