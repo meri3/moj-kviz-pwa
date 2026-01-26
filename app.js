@@ -4,7 +4,6 @@ let currentQuestionIndex = 0;
 let score = 0;
 let attempts = 0;
 
-// Za potrebe nove logike spajanja
 let currentPairs = [];
 let pairIndex = 0;
 
@@ -14,7 +13,6 @@ async function startQuiz() {
         if (!response.ok) throw new Error("Problem s JSON-om");
         let allData = await response.json();
 
-        // Miješanje i uzimanje 20 pitanja
         quizData = allData.sort(() => 0.5 - Math.random()).slice(0, 20);
         loadQuestion();
     } catch (error) {
@@ -27,9 +25,8 @@ function loadQuestion() {
     quizContainer.style.pointerEvents = "auto";
     const q = quizData[currentQuestionIndex];
 
-    // Ako je pitanje tipa 'matching', pripremamo parove za 'jedan po jedan' sustav
     if (q.type === "matching") {
-        currentPairs = Object.entries(q.pairs); // Pretvara {Hrvatska: Zagreb} u [["Hrvatska", "Zagreb"]]
+        currentPairs = Object.entries(q.pairs).sort(() => 0.5 - Math.random());
         pairIndex = 0;
         showNextPair();
     } else {
@@ -37,27 +34,26 @@ function loadQuestion() {
     }
 }
 
-// NOVA LOGIKA ZA SPAJANJE (prikazuje jedan po jedan par iz pitanja)
 function showNextPair() {
     const q = quizData[currentQuestionIndex];
-    const pair = currentPairs[pairIndex]; // npr. ["Hrvatska", "Zagreb"]
+    const pair = currentPairs[pairIndex];
     const pojamLijevo = pair[0];
     const tocanOdgovor = pair[1];
 
     quizContainer.innerHTML = `
-        <p style="text-align:center; color:#6a11cb; font-weight:bold;">Poveži parove (${pairIndex + 1}/${currentPairs.length})</p>
+        <p style="text-align:center; color:#6a11cb; font-weight:bold;">Poveži par (${pairIndex + 1}/${currentPairs.length})</p>
         <h2 style="font-size:32px; margin-bottom:10px;">${pojamLijevo}</h2>
-        <p style="text-align:center; margin-bottom:20px;">Što pripada ovom pojmu?</p>
+        <p style="text-align:center; margin-bottom:20px;">Odaberi točan par:</p>
     `;
 
-    // Generiraj opcije (točna + 3 nasumične iz svih parova tog pitanja)
-    let sveMoguceOpcije = currentPairs.map(p => p[1]);
+    // Generiranje opcija
+    let sveMoguceOpcije = Object.values(q.pairs);
     let opcije = [tocanOdgovor];
 
-    // Dodaj krive odgovore iz ostalih parova da bude izazovno
-    sveMoguceOpcije.filter(o => o !== tocanOdgovor).forEach(o => {
-        if (opcije.length < 4) opcije.push(o);
-    });
+    // Dodaj krive odgovore iz trenutnog pitanja
+    let kriviFilter = sveMoguceOpcije.filter(o => o !== tocanOdgovor);
+    kriviFilter.sort(() => 0.5 - Math.random());
+    opcije.push(...kriviFilter.slice(0, 3));
 
     opcije.sort(() => 0.5 - Math.random());
 
@@ -67,21 +63,29 @@ function showNextPair() {
         btn.innerText = opt;
         btn.className = "quiz-btn";
         btn.onclick = () => {
+            quizContainer.style.pointerEvents = "none"; // Blokiraj duple klikove
+
             if (opt === tocanOdgovor) {
-                pairIndex++;
-                if (pairIndex < currentPairs.length) {
-                    showMessage("Točno! Idemo dalje...", () => showNextPair());
-                } else {
-                    score++; // Dobiva bod tek kad spoji sve parove u pitanju
-                    showMessage("Svi parovi spojeni! 🌟", () => nextQuestion());
-                }
+                score += (1 / currentPairs.length); // Dodaj proporcionalni dio boda
+                showMessage("Točno! 🌟", () => handlePairTransition());
             } else {
-                showMessage("Krivo! Pokušaj ponovno.");
+                // STROGO PRAVILO: Ako je krivo, pokaži točno i idi dalje
+                showMessage(`Netočno! Točno je: ${tocanOdgovor}`, () => handlePairTransition());
             }
         };
         btnWrapper.appendChild(btn);
     });
     quizContainer.appendChild(btnWrapper);
+}
+
+function handlePairTransition() {
+    pairIndex++;
+    if (pairIndex < currentPairs.length) {
+        quizContainer.style.pointerEvents = "auto";
+        showNextPair();
+    } else {
+        nextQuestion();
+    }
 }
 
 function renderStandardQuestion(q) {
@@ -114,9 +118,17 @@ function renderStandardQuestion(q) {
         const btn = document.createElement("button");
         btn.innerText = "Provjeri";
         btn.className = "quiz-btn";
-        btn.onclick = () => checkAnswer(input.value);
+        btn.onclick = () => {
+            quizContainer.style.pointerEvents = "none";
+            checkAnswer(input.value);
+        };
 
-        input.onkeypress = (e) => { if (e.key === "Enter") checkAnswer(input.value); };
+        input.onkeypress = (e) => {
+            if (e.key === "Enter") {
+                quizContainer.style.pointerEvents = "none";
+                checkAnswer(input.value);
+            }
+        };
 
         quizContainer.appendChild(input);
         quizContainer.appendChild(btn);
@@ -126,6 +138,10 @@ function renderStandardQuestion(q) {
 
 function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
+    if (!userAnswer) {
+        quizContainer.style.pointerEvents = "auto";
+        return;
+    }
     const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
 
     if (isCorrect) {
@@ -135,7 +151,7 @@ function checkAnswer(userAnswer) {
         attempts++;
         if (attempts === 1) {
             quizContainer.style.pointerEvents = "auto";
-            showMessage("Pokušaj opet!", () => {
+            showMessage("Pokušaj opet! ↩️", () => {
                 const inp = document.getElementById("user-answer");
                 if (inp) { inp.value = ""; inp.focus(); }
             });
@@ -153,7 +169,7 @@ function showMessage(text, callback) {
     setTimeout(() => {
         msgDiv.remove();
         if (callback) callback();
-    }, 1000);
+    }, 1200); // Malo duže da se stigne pročitati točan odgovor ako se pogriješi
 }
 
 function nextQuestion() {
@@ -166,14 +182,15 @@ function nextQuestion() {
 }
 
 function renderFinalScore() {
+    // Zaokružujemo bodove na cijeli broj jer matching daje decimale
+    const finalScore = Math.round(score);
     quizContainer.innerHTML = `
         <div style="text-align:center;">
             <h2>Kviz završen! 🏆</h2>
-            <p style="font-size:24px; font-weight:bold; margin-bottom:20px;">Rezultat: ${score} / ${quizData.length}</p>
+            <p style="font-size:24px; font-weight:bold; margin-bottom:20px;">Rezultat: ${finalScore} / ${quizData.length}</p>
             <button id="restart-btn" class="quiz-btn">Igraj ponovno</button>
         </div>
     `;
-    // FIX: Direktno dodjeljivanje eventa nakon što se gumb stvori u DOM-u
     document.getElementById('restart-btn').onclick = () => {
         window.location.reload();
     };
