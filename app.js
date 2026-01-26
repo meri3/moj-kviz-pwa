@@ -9,7 +9,7 @@ function showStartScreen() {
     quizContainer.innerHTML = `
         <div style="text-align:center;">
             <h1>Dobrodošli u Kviz! 🏆</h1>
-            <p>20 pitanja. 3 sekunde za pregled odgovora.</p>
+            <p>Odgovorite na 20 nasumičnih pitanja</p>
             <button id="start-btn" class="quiz-btn">KRENI</button>
         </div>
     `;
@@ -58,7 +58,7 @@ function renderStandardQuestion(q) {
         const input = document.createElement("input");
         input.type = "text";
         input.id = "user-ans";
-        input.placeholder = "Odgovor ili prazno za dalje...";
+        input.placeholder = "Odgovor";
         const btn = document.createElement("button");
         btn.className = "quiz-btn";
         btn.innerText = "POTVRDI";
