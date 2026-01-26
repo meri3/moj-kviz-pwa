@@ -80,16 +80,21 @@ function loadQuestion() {
             btn.innerText = item;
             btn.className = "match-btn";
             btn.onclick = () => {
-                if (!selectedLeft) return;
+                // Ako ništa nije odabrano lijevo, ili je ovaj gumb već spojen, ne radi ništa
+                if (!selectedLeft || btn.classList.contains('matched') || btn.classList.contains('error-match')) return;
 
                 const correctRightValue = q.pairs[selectedLeft];
 
                 if (correctRightValue === item) {
-                    // TOČNO - zelena boja, bez pop-upa
+                    // TOČNO
                     btn.classList.add('matched');
                     selectedLeftBtn.classList.add('matched');
+                    btn.disabled = true;
+                    selectedLeftBtn.disabled = true;
+                    matchedCount++;
                 } else {
-                    // NETOČNO - automatsko spajanje crvenom bojom
+                    // NETOČNO
+                    // Odmah nađi koji je desni gumb bio točan da ga obojamo
                     const allRightBtns = rightCol.querySelectorAll('.match-btn');
                     allRightBtns.forEach(rb => {
                         if (rb.innerText === correctRightValue) {
@@ -98,20 +103,18 @@ function loadQuestion() {
                         }
                     });
                     selectedLeftBtn.classList.add('error-match');
+                    selectedLeftBtn.disabled = true;
+                    matchedCount++;
                 }
 
-                // Onemogući oba gumba i očisti selekciju
-                btn.disabled = true;
-                selectedLeftBtn.disabled = true;
+                // KLJUČNO: Uvijek makni 'selected' klasu i isprazni varijable
                 selectedLeftBtn.classList.remove('selected');
-
                 selectedLeft = null;
                 selectedLeftBtn = null;
-                matchedCount++;
 
-                // Kad su svi parovi spojeni, idi dalje
+                // Provjera kraja
                 if (matchedCount === totalPairs) {
-                    setTimeout(() => nextQuestion(), 800);
+                    setTimeout(() => nextQuestion(), 1000);
                 }
             };
             rightCol.appendChild(btn);
@@ -154,6 +157,11 @@ function loadQuestion() {
 function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
     if (!userAnswer) return;
+
+    // ONEMOGUĆI DALJNJE KLIKANJE (da se ne može kliknuti više puta)
+    const allBtns = quizContainer.querySelectorAll('button');
+    allBtns.forEach(btn => btn.disabled = true);
+
     const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
 
     if (isCorrect) {

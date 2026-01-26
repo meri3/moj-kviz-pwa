@@ -93,6 +93,9 @@ input[type="text"] {
     font-weight: 600;
     min-height: 55px;
     transition: all 0.2s;
+    touch-action: manipulation; /* Sprječava zumiranje kod brzog klikanja */
+    -webkit-user-select: none; /* Sprječava označavanje teksta na gumbu */
+    user-select: none;
 }
 
     .match-btn.selected {
