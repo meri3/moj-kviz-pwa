@@ -20,6 +20,7 @@ async function startQuiz() {
     try {
         const res = await fetch('pitanja.json?v=' + Math.random());
         const allData = await res.json();
+        // Uzimamo 20 nasumičnih
         quizData = allData.sort(() => 0.5 - Math.random()).slice(0, 20);
         currentQuestionIndex = 0;
         score = 0;
@@ -43,7 +44,7 @@ function loadQuestion() {
 
 function renderStandardQuestion(q) {
     quizContainer.innerHTML = `
-        <p style="text-align:right; color:#888;">${currentQuestionIndex + 1}/20</p>
+        <p style="text-align:right; color:#888;">Pitanje: ${currentQuestionIndex + 1}/20</p>
         <h2>${q.question}</h2>
     `;
     if (q.type === "abcd") {
@@ -58,18 +59,25 @@ function renderStandardQuestion(q) {
         const input = document.createElement("input");
         input.type = "text";
         input.id = "user-ans";
-        input.placeholder = "Odgovor";
+        input.placeholder = "Odgovor ili prazno za dalje...";
+        input.setAttribute("autocomplete", "off");
+
         const btn = document.createElement("button");
         btn.className = "quiz-btn";
         btn.innerText = "POTVRDI";
         btn.onclick = () => checkAnswer(input.value || "");
+
+        // Enter podrška
+        input.onkeypress = (e) => { if (e.key === 'Enter') checkAnswer(input.value || ""); };
+
         quizContainer.appendChild(input);
         quizContainer.appendChild(btn);
+        input.focus();
     }
 }
 
 function checkAnswer(userAnswer) {
-    quizContainer.style.pointerEvents = "none"; // Blokiraj klikove odmah
+    quizContainer.style.pointerEvents = "none";
     const q = quizData[currentQuestionIndex];
     const cleanUser = userAnswer.toLowerCase().trim();
     let isCorrect = false;
@@ -96,7 +104,8 @@ function showNextPair() {
     const q = quizData[currentQuestionIndex];
 
     quizContainer.innerHTML = `
-        <p style="text-align:right; color:#888;">${currentQuestionIndex + 1}/20 (Par ${pairIndex + 1})</p>
+        <p style="text-align:right; color:#888;">Pitanje: ${currentQuestionIndex + 1}/20</p>
+        <p style="text-align:center; color:#6a11cb;">Spoji par (${pairIndex + 1}/${currentPairs.length})</p>
         <h2>${pair[0]}</h2>
     `;
 
@@ -129,13 +138,20 @@ function showMessage(text, type, callback) {
     const msg = document.createElement("div");
     msg.className = "feedback-popup";
     msg.innerText = text;
-    msg.style.backgroundColor = type === "green" ? "#28a745" : "#dc3545";
+
+    // FIKSIRANA LOGIKA BOJA:
+    if (type === "green") {
+        msg.style.backgroundColor = "#28a745"; // Zelena
+    } else {
+        msg.style.backgroundColor = "#dc3545"; // Crvena
+    }
+
     document.body.appendChild(msg);
 
     setTimeout(() => {
         msg.remove();
         if (callback) callback();
-    }, 3000); // FIKSNO 3 SEKUNDE
+    }, 2500);
 }
 
 function nextQuestion() {
@@ -148,10 +164,11 @@ function nextQuestion() {
 }
 
 function renderFinal() {
+    const finalScore = Math.round(score);
     quizContainer.innerHTML = `
         <div style="text-align:center;">
-            <h2>Kraj!</h2>
-            <p style="font-size:40px;">${Math.round(score)} / 20</p>
+            <h2>Kviz završen! 🏆</h2>
+            <p style="font-size:40px; color:#6a11cb; font-weight:bold; margin:20px 0;">${finalScore} / 20</p>
             <button onclick="location.reload()" class="quiz-btn">Igraj ponovno</button>
         </div>
     `;
