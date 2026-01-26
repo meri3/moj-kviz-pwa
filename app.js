@@ -8,16 +8,15 @@ let selectedLeftBtn = null;
 
 async function startQuiz() {
     try {
-        // Dodajemo ?v= i random broj da Safari ne vuče staru verziju JSON-a
         const response = await fetch('pitanja.json?v=' + Math.random());
         if (!response.ok) throw new Error("JSON nije pronađen");
 
         let allData = await response.json();
-        // Miješanje i uzimanje 20 pitanja
+        // Miješanje i uzimanje 20 nasumičnih pitanja
         quizData = allData.sort(() => 0.5 - Math.random()).slice(0, 20);
         loadQuestion();
     } catch (error) {
-        quizContainer.innerHTML = "<h2>Greška pri učitavanju...</h2><p>Provjeri je li pitanja.json u istom folderu i je li format točan.</p>";
+        quizContainer.innerHTML = "<h2>Greška pri učitavanju...</h2><p>Provjeri format u pitanja.json!</p>";
         console.error(error);
     }
 }
@@ -31,7 +30,7 @@ function showMessage(text, callback) {
     setTimeout(() => {
         msgDiv.remove();
         if (callback) callback();
-    }, 1000); // Kratki blic od 1 sekunde
+    }, 1000); // Blic traje 1 sekundu
 }
 
 function loadQuestion() {
@@ -81,31 +80,38 @@ function loadQuestion() {
             btn.innerText = item;
             btn.className = "match-btn";
             btn.onclick = () => {
-                if (!selectedLeft) {
-                    showMessage("Prvo odaberi lijevo!");
-                    return;
-                }
+                if (!selectedLeft) return;
+
                 const correctRightValue = q.pairs[selectedLeft];
+
                 if (correctRightValue === item) {
+                    // TOČNO - zelena boja, bez pop-upa
                     btn.classList.add('matched');
                     selectedLeftBtn.classList.add('matched');
-                    btn.disabled = true;
-                    selectedLeftBtn.disabled = true;
-                    matchedCount++;
-                    showMessage("Točno! 🌟");
                 } else {
-                    // Automatsko spajanje točnog ako se pogriješi
+                    // NETOČNO - automatsko spajanje crvenom bojom
                     const allRightBtns = rightCol.querySelectorAll('.match-btn');
                     allRightBtns.forEach(rb => {
-                        if (rb.innerText === correctRightValue) rb.classList.add('error-match');
+                        if (rb.innerText === correctRightValue) {
+                            rb.classList.add('error-match');
+                            rb.disabled = true;
+                        }
                     });
                     selectedLeftBtn.classList.add('error-match');
-                    showMessage("Netočno!");
-                    matchedCount++;
                 }
+
+                // Onemogući oba gumba i očisti selekciju
+                btn.disabled = true;
+                selectedLeftBtn.disabled = true;
+                selectedLeftBtn.classList.remove('selected');
+
                 selectedLeft = null;
+                selectedLeftBtn = null;
+                matchedCount++;
+
+                // Kad su svi parovi spojeni, idi dalje
                 if (matchedCount === totalPairs) {
-                    setTimeout(() => nextQuestion(), 1500);
+                    setTimeout(() => nextQuestion(), 800);
                 }
             };
             rightCol.appendChild(btn);
@@ -128,11 +134,9 @@ function loadQuestion() {
         input.type = "text";
         input.id = "user-answer";
         input.placeholder = "Upiši odgovor...";
-        // ISKLJUČIVANJE AUTO-ISPUNE
         input.setAttribute("autocomplete", "off");
         input.setAttribute("autocorrect", "off");
         input.setAttribute("spellcheck", "false");
-        input.name = "random" + Math.random();
 
         input.addEventListener("keypress", (e) => { if (e.key === "Enter") checkAnswer(input.value); });
 
