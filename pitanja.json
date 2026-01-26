@@ -1,6 +1,236 @@
 ﻿[
   {
     "type": "input",
+    "question": "S koje tri riječi prevodimo francuski 'enfant prodige' ili njemački 'Wunderkind'?",
+    "correct": [ "Čudo od djeteta", "Cudo od djeteta" ]
+  },
+  {
+    "type": "input",
+    "question": "Za simbol srca u chatu upisat ćete šiljastu zagradu i koju još brojku?",
+    "correct": [ "3", "Trojku", "Trojka" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem Tarantinovu filmu oslobođeni rob Django spašava svoju odabranicu?",
+    "correct": [ "Django Unchained", "Oslobođeni Django" ]
+  },
+  {
+    "type": "input",
+    "question": "Tijelo koje se hrvatske blaženice čuva u crkvi Svete Marije u Kotoru?",
+    "correct": [ "Ozana Kotorska", "Ozane Kotorske" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji se broj nalazi u naslovu posljednjeg romana Umberta Eca iz 2015.?",
+    "correct": [ "0", "Nula" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je rimski bog trgovine izjednačen s grčkim Hermesom?",
+    "correct": "Merkur"
+  },
+  {
+    "type": "input",
+    "question": "Kako je po austrijskom treneru nazvan najveći stadion u Beču?",
+    "correct": [ "Ernst Happel", "Ernst Happel Stadion" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je popularni naziv limundžika, čiji pelud uzrokuje alergije?",
+    "correct": "Ambrozija"
+  },
+  {
+    "type": "input",
+    "question": "Kako se na sveučilištu zove rektorov zamjenik?",
+    "correct": "Prorektor"
+  },
+  {
+    "type": "abcd",
+    "question": "Što premošćuje Pelješki most?",
+    "options": [ "Malostonski kanal", "Neretvanski kanal", "Pelješki kanal" ],
+    "correct": "Malostonski kanal"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je plemić za Hvarske bune morao napustiti svoj rodni otok?",
+    "options": [ "Hannibal Lucić", "Junije Palmotić", "Mavro Vetranović" ],
+    "correct": "Hannibal Lucić"
+  },
+  {
+    "type": "abcd",
+    "question": "U koju se granu matematike ubraja teorija čvorova?",
+    "options": [ "Algebra", "Analiza", "Topologija" ],
+    "correct": "Topologija"
+  },
+  {
+    "type": "abcd",
+    "question": "Tko se dijeli na black, grey i white hats (crne, sive i bijele šešire)?",
+    "options": [ "Copywriteri", "Hakeri", "Influenceri" ],
+    "correct": "Hakeri"
+  },
+  {
+    "type": "abcd",
+    "question": "Košarkaš u čast kojemu je jedan klub umirovio dva različita broja (8 i 24) je:",
+    "options": [ "Dwyane Wade", "Kobe Bryant", "Michael Jordan" ],
+    "correct": "Kobe Bryant"
+  },
+  {
+    "type": "input",
+    "question": "Koje tvorevine u bubrezima uzrokuju bolne grčeve (građene od urata)?",
+    "correct": [ "Kamenci", "Kamenac" ]
+  },
+  {
+    "type": "input",
+    "question": "Uz koji se filozofski pravac veže Sartreov pojam 'bitak-za-sebe'?",
+    "correct": "Egzistencijalizam"
+  },
+  {
+    "type": "input",
+    "question": "Koji je međunarodni akronim Visokog povjerenstva UN-a za izbjeglice?",
+    "correct": "UNHCR"
+  },
+  {
+    "type": "input",
+    "question": "Koji je rimski car jedini vladao u godinama prije i poslije Krista?",
+    "correct": "August"
+  },
+  {
+    "type": "input",
+    "question": "Koji je irski nobelovac autor drame 'Dah' koja traje manje od minute?",
+    "correct": [ "Samuel Beckett", "Beckett" ]
+  },
+  {
+    "type": "input",
+    "question": "Što u biologiji označava tekući dio krvi, a u fizici ioniziranu tvar?",
+    "correct": "Plazma"
+  },
+  {
+    "type": "abcd",
+    "question": "Nijedna žena nije bila na čelu kojeg hrvatskog ministarstva?",
+    "options": [ "Oružanih snaga", "Unutarnjih poslova", "Vanjskih poslova" ],
+    "correct": "Unutarnjih poslova"
+  },
+  {
+    "type": "abcd",
+    "question": "Tko u filmu 'The Substance' (2024.) glumi lik Elisabeth (stariju verziju)?",
+    "options": [ "Amanda Peet", "Demi Moore", "Jennifer Connelly" ],
+    "correct": "Demi Moore"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja pjevačica u zagrebačkoj Areni nastupa 8. studenog 2030.?",
+    "options": [ "Domenica", "Minea", "Zsa Zsa" ],
+    "correct": "Domenica"
+  },
+  {
+    "type": "abcd",
+    "question": "I Hruščov i Tito su po zanimanju bili:",
+    "options": [ "Bravari", "Električari", "Postolari" ],
+    "correct": "Bravari"
+  },
+  {
+    "type": "input",
+    "question": "Koji se grad prvi put spominje 1066. u ispravi Petra Krešimira IV.?",
+    "correct": [ "Šibenik", "Sibenik" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja granična rijeka kraj Jasenovca utječe u Savu?",
+    "correct": [ "Una", "Unu" ]
+  },
+  {
+    "type": "input",
+    "question": "Kojim postupkom se postiže izbacivanje gnoja iz rana ili vode iz broda?",
+    "correct": [ "Drenaža", "Drenaza" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem je vrtu podno Maslinske gore Isus uhićen uoči Velikog petka?",
+    "correct": [ "Getsemanski vrt", "Getsemanski" ]
+  },
+  {
+    "type": "abcd",
+    "question": "Čega mitološki Arg ima sto, a Polifem samo jedno?",
+    "options": [ "Očiju", "Prstiju", "Zuba" ],
+    "correct": "Očiju"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja su slova u samoj sredini grčkog alfabeta?",
+    "options": [ "Fi i hi", "Mi i ni", "Pi i ksi" ],
+    "correct": "Mi i ni"
+  },
+  {
+    "type": "input",
+    "question": "Koji rastopljeni motiv dominira na Dalíjevoj slici 'Postojanost pamćenja'?",
+    "correct": [ "Sat", "Satovi" ]
+  },
+  {
+    "type": "input",
+    "question": "Kojim slovom počinju imena glavnih gradova Iraka, Libanona i Austrije?",
+    "correct": [ "B", "Slovo B" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji hrvatski nogometni prvoligaš na grbu ima istaknutu godinu 1961.?",
+    "correct": "Istra"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja država do 2030. planira potpuno napustiti gotovinsko plaćanje?",
+    "options": [ "Albanija", "Bugarska", "Češka" ],
+    "correct": "Češka"
+  },
+  {
+    "type": "abcd",
+    "question": "U kojem filmu Bill Murray glumi televizijskog djelatnika (voditelja prognoze)?",
+    "options": [ "Beskrajan dan", "Brza promjena", "Izgubljeni u prijevodu" ],
+    "correct": "Beskrajan dan"
+  },
+  {
+    "type": "abcd",
+    "question": "Hrvatska vojska ima dva pozdrava: Pozdrav domovini i:",
+    "options": [ "Domovini predani", "Domovini vjerni", "Domovini zahvalni" ],
+    "correct": "Domovini vjerni"
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je nadimak na početku karijere imao Grigor Dimitrov?",
+    "options": [ "Baby Djokovic", "Baby Federer", "Baby Nadal" ],
+    "correct": "Baby Federer"
+  },
+  {
+    "type": "input",
+    "question": "Bijenale su priredbe koje se održavaju svakih koliko godina?",
+    "correct": [ "2", "Dvije", "Dva" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem romanu Stephena Kinga pisac Paul Sheldon piše da bi ostao živ?",
+    "correct": "Misery"
+  },
+  {
+    "type": "input",
+    "question": "Na kojem je kontinentu totalitarna država Panem iz 'Igara gladi'?",
+    "correct": [ "Sjeverna Amerika", "Sjevernoj Americi" ]
+  },
+  {
+    "type": "input",
+    "question": "Tko je 2001. godine s pozivnicom (wildcard) osvojio Wimbledon?",
+    "correct": [ "Goran Ivanišević", "Ivanisevic", "Goran" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji se košarkaš Lakersa 1991. povukao jer je objavio da je HIV pozitivan?",
+    "correct": [ "Magic Johnson", "Magic" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj se državi rođendan Benita Juáreza slavi kao nacionalni praznik?",
+    "correct": "Meksiko"
+  },
+  {
+    "type": "input",
     "question": "Kojim se germanizmom nazivaju spuštena stopala?",
     "correct": "Platfus"
   },
@@ -475,7 +705,7 @@
   {
     "type": "input",
     "question": "Koji bi se naš glazbenik na standardnom hrvatskom zvao Munja?",
-    "correct": ["Šajeta", "Sajeta" ]
+    "correct": [ "Šajeta", "Sajeta" ]
   },
   {
     "type": "input",
