@@ -100,10 +100,8 @@ function renderStandardQuestion(q) {
 function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
     const inputCleaned = userAnswer.toLowerCase().trim();
-
     let isCorrect = false;
 
-    // Logika za više mogućih točnih odgovora
     if (Array.isArray(q.correct)) {
         isCorrect = q.correct.some(ans => ans.toLowerCase().trim() === inputCleaned);
     } else {
@@ -112,10 +110,11 @@ function checkAnswer(userAnswer) {
 
     if (isCorrect && inputCleaned !== "") {
         score++;
+        // Prvo šaljemo poruku, pa tek kad ona prođe (nakon 3 sek) idemo na nextQuestion
         showMessage("Točno! 🌟", () => nextQuestion());
     } else {
-        // Ako je prazno ili krivo, odmah pokazuje točan odgovor i ide dalje
         const displayAnswer = Array.isArray(q.correct) ? q.correct[0] : q.correct;
+        // Ključno: Pitanje ostaje na ekranu dok traje showMessage
         showMessage(`Točno je: ${displayAnswer}`, () => nextQuestion());
     }
 }
@@ -168,26 +167,29 @@ function handlePairTransition() {
 }
 
 function showMessage(text, callback) {
-    // 1. Onemogući bilo kakve klikove dok traje poruka
+    // 1. Potpuno onemogući klikove da ne možeš preskočiti
     quizContainer.style.pointerEvents = "none";
+    quizContainer.style.opacity = "0.8"; // Blago zatamnimo staro pitanje da se popup bolje vidi
 
     const msgDiv = document.createElement("div");
     msgDiv.className = "feedback-popup";
     msgDiv.innerText = text;
 
-    // Ako je odgovor netočan, oboji prozorčić u crvenkasto (opcionalno, ako želiš)
+    // Crvena boja za netočno
     if (text.includes("Točno je:")) {
-        msgDiv.style.background = "rgba(220, 53, 69, 0.95)";
+        msgDiv.style.background = "rgba(220, 53, 69, 0.98)";
+        msgDiv.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
     }
 
     document.body.appendChild(msgDiv);
 
-    // Trajanje postavljeno na 3 sekunde (3000ms)
     setTimeout(() => {
         msgDiv.remove();
-        quizContainer.style.pointerEvents = "auto"; // Ponovo dozvoli klikove
+        quizContainer.style.opacity = "1"; // Vratimo vidljivost
+        // TEK SADA dopuštamo prelazak na novo pitanje
         if (callback) callback();
-    }, 3000);
+        quizContainer.style.pointerEvents = "auto";
+    }, 3500); // Povećao sam na 3.5 sekunde da budeš sigurna
 }
 
 function nextQuestion() {
