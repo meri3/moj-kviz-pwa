@@ -1,5 +1,4 @@
-﻿alert("Kod je osvježen!");
-const quizContainer = document.getElementById('quiz-container');
+﻿const quizContainer = document.getElementById('quiz-container');
 let quizData = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -169,13 +168,24 @@ function handlePairTransition() {
 }
 
 function showMessage(text, callback) {
+    // 1. Onemogući bilo kakve klikove dok traje poruka
+    quizContainer.style.pointerEvents = "none";
+
     const msgDiv = document.createElement("div");
     msgDiv.className = "feedback-popup";
     msgDiv.innerText = text;
+
+    // Ako je odgovor netočan, oboji prozorčić u crvenkasto (opcionalno, ako želiš)
+    if (text.includes("Točno je:")) {
+        msgDiv.style.background = "rgba(220, 53, 69, 0.95)";
+    }
+
     document.body.appendChild(msgDiv);
 
+    // Trajanje postavljeno na 3 sekunde (3000ms)
     setTimeout(() => {
         msgDiv.remove();
+        quizContainer.style.pointerEvents = "auto"; // Ponovo dozvoli klikove
         if (callback) callback();
     }, 3000);
 }
