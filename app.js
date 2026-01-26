@@ -138,12 +138,17 @@ function renderStandardQuestion(q) {
 
 function checkAnswer(userAnswer) {
     const q = quizData[currentQuestionIndex];
-    if (!userAnswer) {
-        quizContainer.style.pointerEvents = "auto";
-        return;
-    }
-    const isCorrect = userAnswer.toLowerCase().trim() === q.correct.toLowerCase().trim();
+    if (!userAnswer) return;
 
+    const inputCleaned = userAnswer.toLowerCase().trim();
+    let isCorrect = false;
+
+    // Provjera ako imamo listu točnih odgovora ili samo jedan string
+    if (Array.isArray(q.correct)) {
+        isCorrect = q.correct.some(ans => ans.toLowerCase().trim() === inputCleaned);
+    } else {
+        isCorrect = q.correct.toLowerCase().trim() === inputCleaned;
+    }
     if (isCorrect) {
         if (attempts === 0) score++;
         showMessage("Točno! 🌟", () => nextQuestion());
