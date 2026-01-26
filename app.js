@@ -173,7 +173,6 @@ function showMessage(text, callback) {
     msgDiv.innerText = text;
     document.body.appendChild(msgDiv);
 
-    // Povećano na 2500ms (2.5 sekunde) za ugodnije čitanje
     setTimeout(() => {
         msgDiv.remove();
         if (callback) callback();
