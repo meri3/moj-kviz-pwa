@@ -177,7 +177,7 @@ function showMessage(text, callback) {
     setTimeout(() => {
         msgDiv.remove();
         if (callback) callback();
-    }, 2500);
+    }, 3000);
 }
 
 function nextQuestion() {
