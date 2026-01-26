@@ -37,6 +37,8 @@ function loadQuestion() {
     attempts = 0;
     selectedLeft = null;
     selectedLeftBtn = null;
+    quizContainer.style.pointerEvents = "auto"; // Osiguraj da su klikovi dopušteni
+
     const q = quizData[currentQuestionIndex];
     quizContainer.innerHTML = `<h2>${q.question}</h2>`;
 
@@ -67,6 +69,9 @@ function loadQuestion() {
             btn.innerText = item;
             btn.className = "match-btn";
             btn.onclick = () => {
+                // Ako je već spojen, ignoriraj
+                if (btn.classList.contains('matched') || btn.classList.contains('error-match')) return;
+
                 leftCol.querySelectorAll('.match-btn').forEach(b => b.classList.remove('selected'));
                 btn.classList.add('selected');
                 selectedLeft = item;
@@ -80,21 +85,17 @@ function loadQuestion() {
             btn.innerText = item;
             btn.className = "match-btn";
             btn.onclick = () => {
-                // Ako ništa nije odabrano lijevo, ili je ovaj gumb već spojen, ne radi ništa
+                // Osiguranje: ne radi ništa ako lijeva strana nije odabrana ili je ovaj desni već spojen
                 if (!selectedLeft || btn.classList.contains('matched') || btn.classList.contains('error-match')) return;
 
                 const correctRightValue = q.pairs[selectedLeft];
 
                 if (correctRightValue === item) {
-                    // TOČNO
                     btn.classList.add('matched');
                     selectedLeftBtn.classList.add('matched');
                     btn.disabled = true;
                     selectedLeftBtn.disabled = true;
-                    matchedCount++;
                 } else {
-                    // NETOČNO
-                    // Odmah nađi koji je desni gumb bio točan da ga obojamo
                     const allRightBtns = rightCol.querySelectorAll('.match-btn');
                     allRightBtns.forEach(rb => {
                         if (rb.innerText === correctRightValue) {
@@ -104,16 +105,17 @@ function loadQuestion() {
                     });
                     selectedLeftBtn.classList.add('error-match');
                     selectedLeftBtn.disabled = true;
-                    matchedCount++;
                 }
 
-                // KLJUČNO: Uvijek makni 'selected' klasu i isprazni varijable
+                // RESETIRANJE SELEKCIJE - Uvijek i bez odgađanja
                 selectedLeftBtn.classList.remove('selected');
                 selectedLeft = null;
                 selectedLeftBtn = null;
+                matchedCount++;
 
                 // Provjera kraja
                 if (matchedCount === totalPairs) {
+                    quizContainer.style.pointerEvents = "none"; // Blokiraj sve klikove do novog pitanja
                     setTimeout(() => nextQuestion(), 1000);
                 }
             };
@@ -129,7 +131,11 @@ function loadQuestion() {
             const btn = document.createElement("button");
             btn.innerText = opt;
             btn.className = "quiz-btn";
-            btn.onclick = () => checkAnswer(opt);
+            btn.onclick = () => {
+                const allButtons = quizContainer.querySelectorAll('.quiz-btn');
+                allButtons.forEach(b => b.disabled = true); // Spriječi duple klikove
+                checkAnswer(opt);
+            };
             quizContainer.appendChild(btn);
         });
     } else if (q.type === "input") {
@@ -141,12 +147,20 @@ function loadQuestion() {
         input.setAttribute("autocorrect", "off");
         input.setAttribute("spellcheck", "false");
 
-        input.addEventListener("keypress", (e) => { if (e.key === "Enter") checkAnswer(input.value); });
-
         const btn = document.createElement("button");
         btn.innerText = "Provjeri";
         btn.className = "quiz-btn";
-        btn.onclick = () => checkAnswer(document.getElementById("user-answer").value);
+        btn.onclick = () => {
+            btn.disabled = true; // Spriječi duple klikove
+            checkAnswer(input.value);
+        };
+
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                btn.disabled = true;
+                checkAnswer(input.value);
+            }
+        });
 
         quizContainer.appendChild(input);
         quizContainer.appendChild(btn);
