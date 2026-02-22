@@ -8882,5 +8882,498 @@
     "question": "Koje more razdvaja Arapski poluotok od sjeveroistočne obale Afrike?",
     "correct": [ "Crveno more" ]
   },
-
+  {
+    "type": "input",
+    "question": "Što se kod biljaka cvjetnjača (kritosjemenjača) razvija iz plodnice cvijeta nakon procesa oprašivanja i oplodnje?",
+    "correct": [ "Plod" ]
+  },
+  {
+    "type": "input",
+    "question": "Kojeg je dana u tjednu, 27. listopada 2013., emitirana prva epizoda kviza „Potjera“ u Hrvatskoj?",
+    "correct": [ "Nedjelja", "Nedjeljom" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja rimska božica mudrosti i obrta, pandan grčkoj Ateni, s Jupiterom i Junonom čini Kapitolijsku trijadu?",
+    "correct": [ "Minerva" ]
+  },
+  {
+    "type": "input",
+    "question": "Na kojem se kontinentu proslavio Howard Carter otkrićem Tutankamonove grobnice u Dolini kraljeva?",
+    "correct": [ "Afrika", "Africi" ]
+  },
+  {
+    "type": "input",
+    "question": "Koje zanimanje dijele Millerov Willy Loman i Kafkin Gregor Samsa prije svoje preobrazbe?",
+    "correct": [ "Trgovački putnik", "Trgovacki putnici" ]
+  },
+  {
+    "type": "input",
+    "question": "S kojim osjetilom imaju problema osobe s ambliopijom, u narodu poznatom kao „slabovidnost“ ili „lijeno oko“?",
+    "correct": [ "Vid", "Vidom" ]
+  },
+  {
+    "type": "input",
+    "question": "S kojom srednjoameričkom državom, osim s Belizeom, Meksiko dijeli svoju južnu granicu?",
+    "correct": [ "Gvatemala", "Gvatemalom" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj državi, s glavnim gradom Teheranom, živi apsolutno najveći broj pripadnika šijitskog islama?",
+    "correct": [ "Iran" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji kemijski element, uz manji postotak kositra, čini oko 80% sastava legure bronce?",
+    "correct": [ "Bakar", "Cu" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji film iz 2014. o atentatu na Kim Jong-una nije prikazan u većini kina zbog hakerskih prijetnji?",
+    "correct": [ "The Interview", "Intervju" ]
+  },
+  {
+    "type": "abcd",
+    "question": "U kojem se kvadrantu trbušne šupljine, zaštićena rebrima, nalazi slezena (lat. lien)?",
+    "options": [ "U desnom dijelu", "U lijevom dijelu", "U središnjem dijelu" ],
+    "correct": "U lijevom dijelu"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja od navedenih hrvatskih znamenitosti trenutno NIJE na popisu UNESCO-ve svjetske baštine?",
+    "options": [ "Amfiteatar u Puli", "Dioklecijanova palača", "Šibenska katedrala" ],
+    "correct": "Amfiteatar u Puli"
+  },
+  {
+    "type": "abcd",
+    "question": "Ljudevit Gaj je protivnike ilirizma koji su pokrenuli časopis „Kolo“ pogrdno nazivao kojim životinjama?",
+    "options": [ "Puž, miš i đavao", "Rak, vuk i vrag", "Vol, som i šejtan" ],
+    "correct": "Vol, som i šejtan"
+  },
+  {
+    "type": "abcd",
+    "question": "Papa Štrumf je vođa Štrumfova, a tko je „papasilen“ u starogrčkoj mitologiji?",
+    "options": [ "Moćne gomilice", "Satirskog kora", "Vrzina kola" ],
+    "correct": "Satirskog kora"
+  },
+  {
+    "type": "abcd",
+    "question": "Gdje će se, prema odluci FIFA-e, održati Svjetsko prvenstvo u nogometu 2034. godine?",
+    "options": [ "U Kazahstanu", "U Saudijskoj Arabiji", "U Velikoj Britaniji" ],
+    "correct": "U Saudijskoj Arabiji"
+  },
+  {
+    "type": "input",
+    "question": "Koji je francuski avijatičar, pionir letenja, postao eponim teniskog kompleksa u Parizu?",
+    "correct": [ "Roland Garros", "Garos" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja američka savezna država, s glavnim gradom Austinom, dijeli najdužu granicu s Meksikom?",
+    "correct": [ "Teksas", "Texas" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji naslov dijeli meksička sapunica s Leticiom Calderón i roman Victora Hugoa o zvonaru crkve Notre Dame?",
+    "correct": [ "Esmeralda" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je Microsoftov OS lansiran 1995. godine uz prvu globalnu marketinšku kampanju s hitom Stonesa?",
+    "correct": [ "Windows 95" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je roman Paula Coelha o pastiru Santiagu postao svjetski fenomen preveden na više od 80 jezika?",
+    "correct": [ "Alkemičar", "Alchemist" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji se rastezljivi mišićni organ nalazi između jednjaka (ezofagusa) i početka dvanaesnika?",
+    "correct": [ "Želudac", "Zeludac" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se u botanici stručno nazivaju listovi golosjemenjača poput bora, smreke i jele?",
+    "correct": [ "Iglice" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je najčešći narodni naziv za kukca iz porodice štitastih stjenica koji ispušta neugodan miris?",
+    "correct": [ "Smrdljivi martin" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se nazivaju udaraljke od dvije metalne ploče koje se udaraju jedna o drugu ili palicom?",
+    "correct": [ "Činele", "Cinele" ]
+  },
+  {
+    "type": "abcd",
+    "question": "Kako se u Sloveniji naziva predstavničko tijelo građana (parlament), pandan Hrvatskom saboru?",
+    "options": [ "Državnom koru", "Državnom sejmu", "Državnom zboru" ],
+    "correct": "Državnom zboru"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja je slavna spisateljica, autorica „Plesne haljine žutog maslačka“, majka Sanje Pilić?",
+    "options": [ "Dubravka Ugrešić", "Sunčana Škrinjarić", "Vesna Parun" ],
+    "correct": "Sunčana Škrinjarić"
+  },
+  {
+    "type": "abcd",
+    "question": "Novinarka Ženi Lebl je završila na robiji jer je ispričala vic u kojem je Tita nazvala „ljubičicom od 100 kg“?",
+    "options": [ "Ljubičicom bijelom", "Mimozom žutom", "Ružom crvenom" ],
+    "correct": "Ljubičicom bijelom"
+  },
+  {
+    "type": "abcd",
+    "question": "U izboru za 2024./2025. godinu, iz koje države dolazi pobjednica prestižnog natjecanja ljepote Fatima Bos Fernández?",
+    "options": [ "Meksika", "Španjolske", "Venezuele" ],
+    "correct": "Španjolske"
+  },
+  {
+    "type": "abcd",
+    "question": "Koja je moderna „druga scena“ zagrebačkog kazališta smještena u bivšoj tvornici otvorena 2025.?",
+    "options": [ "HNK2", "Trešnja2", "ZKM2" ],
+    "correct": "ZKM2"
+  },
+  {
+    "type": "abcd",
+    "question": "Kontaktologija (leće) i strabologija (škiljenje) su grane koje medicinske specijalizacije?",
+    "options": [ "Dermatologije", "Oftalmologije", "Radiologije" ],
+    "correct": "Oftalmologije"
+  },
+  {
+    "type": "input",
+    "question": "Koje su po redu bile Olimpijske igre održane u Londonu 1908., nakon Atene, Pariza i St. Louisa?",
+    "correct": [ "Četvrte", "4." ]
+  },
+  {
+    "type": "input",
+    "question": "Naziv „hydrargyrum“ (tekuće srebro) odnosi se na koji kemijski element s atomskim brojem 80?",
+    "correct": [ "Živa", "Hg" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je raspjevani i naivni snjegović, ljubitelj topline, jedan od glavnih likova filma „Frozen“?",
+    "correct": [ "Olaf" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je britanski grad tijekom industrijske revolucije dobio nadimak „Cottonopolis“ zbog tekstilne industrije?",
+    "correct": [ "Manchester", "Mancester" ]
+  },
+  {
+    "type": "input",
+    "question": "Doseljenici iz koje su države osnovali „Novi Amsterdam“ (današnji New York) i naselje Harlem?",
+    "correct": [ "Nizozemske", "Nizozemska" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja je država na Kavkazu prva proglasila kršćanstvo državnom religijom, još 301. godine?",
+    "correct": [ "Armenija" ]
+  },
+  {
+    "type": "input",
+    "question": "Lomonosov-Lavoisierov zakon kaže da je ukupna masa reaktanata uvijek jednaka ukupnoj masi čega?",
+    "correct": [ "Produkata", "Produkt" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je službeni latinski naziv franjevačkog reda (Ordo Fratrum Minorum) u prijevodu na hrvatski?",
+    "correct": [ "Red manje braće", "Manja braća" ]
+  },
+  {
+    "type": "input",
+    "question": "Kojoj vrsti tjestenine, plosnatijoj od špageta, naziv u prijevodu s talijanskog znači „mali jezici“?",
+    "correct": [ "Linguine", "Lingvini" ]
+  },
+  {
+    "type": "abcd",
+    "question": "Likovi kralja Juliena i pingvina u kojem animiranom serijalu plešu uz „I Like to Move It“?",
+    "options": [ "Auti", "Madagaskar", "Priča o igračkama" ],
+    "correct": "Madagaskar"
+  },
+  {
+    "type": "abcd",
+    "question": "U planinama središnje Azije, plavi ovac (baral) je primarni izvor hrane kojem ugroženom predatoru?",
+    "options": [ "Floridske pantere", "Snježnog leoparda", "Sumatranskog tigra" ],
+    "correct": "Snježnog leoparda"
+  },
+  {
+    "type": "abcd",
+    "question": "Nizozemski PSV Eindhoven je iz velikog grada, ali aktualni prvak koje države dolazi iz sela s manje od 1500 ljudi?",
+    "options": [ "Grčke", "Nizozemske", "Švedske" ],
+    "correct": "Nizozemske"
+  },
+  {
+    "type": "abcd",
+    "question": "Coos Bay je najveći obalni grad u kojoj američkoj saveznoj državi na Pacifiku?",
+    "options": [ "Georgia", "Oregon", "Virginia" ],
+    "correct": "Oregon"
+  },
+  {
+    "type": "abcd",
+    "question": "U internet kulturi, koji je to apsurdni „brainrot“ lik (obično pas ili babun) s plavim tenisicama?",
+    "options": [ "Babun", "Morski pas", "Slon" ],
+    "correct": "Babun"
+  },
+  {
+    "type": "abcd",
+    "question": "Tren de Aragua, trenutno jedan od najmoćnijih narkokartela na svijetu, potječe iz koje države?",
+    "options": [ "Kolumbije", "Perua", "Venezuele" ],
+    "correct": "Venezuele"
+  },
+  {
+    "type": "abcd",
+    "question": "U sustavu Ujedinjenog Kraljevstva, koji ministar tradicionalno nosi titulu Lorda kancelara?",
+    "options": [ "Pravosuđa", "Socijalne skrbi", "Vanjskih poslova" ],
+    "correct": "Pravosuđa"
+  },
+  {
+    "type": "input",
+    "question": "Kojim je nadimkom, prema boji svoje duše i zlodjelima, u legendama zapamćena Barbara Celjska?",
+    "correct": [ "Crna kraljica", "Crna" ]
+  },
+  {
+    "type": "input",
+    "question": "Iako kod konja može biti iznimaka, koliko mladunaca u pravilu donosi na svijet ženka zebre?",
+    "correct": [ "Jedno", "1" ]
+  },
+  {
+    "type": "input",
+    "question": "Kojem je rimskom vojskovođi August očajan vikao „Vrati mi moje legije!“ nakon poraza u Teutoburškoj šumi?",
+    "correct": [ "Vara", "Publije Kvintilije Var" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je debitantski roman Stephena Kinga o djevojci s telekinetičkim moćima postao kultni horor klasik?",
+    "correct": [ "Carrie", "Keri" ]
+  },
+  {
+    "type": "input",
+    "question": "Stvaranjem grupacije PSA 1976. godine, koji su se francuski automobilski giganti udružili?",
+    "correct": [ "Peugeot i Citroen", "Pezo i Sitroen" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se naziva najmanji broj glasova ili zastupnika potreban da bi skupština mogla valjano odlučivati?",
+    "correct": [ "Kvorum" ]
+  },
+  {
+    "type": "input",
+    "question": "Koju indijsku turističku državu povezujemo s psihodeličnim tranceom (Goa trance) s kraja 80-ih?",
+    "correct": [ "Goa" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem škotskom jezeru, dijelu Kaledonskog kanala, turisti već desetljećima traže neman zvanu Nessie?",
+    "correct": [ "Loch Ness", "Loh Nes" ]
+  },
+  {
+    "type": "abcd",
+    "question": "Koji je legendarni jazz trubač imao tolike ožiljke na usnama od sviranja da je morao mijenjati tehniku?",
+    "options": [ "Buddy Rich", "Louis Armstrong", "Thelonious Monk" ],
+    "correct": "Louis Armstrong"
+  },
+  {
+    "type": "abcd",
+    "question": "Čuveni revolver Colt Single Action Army iz 1873. godine nosio je koji ironični nadimak?",
+    "options": [ "Partybreaker", "Peacemaker", "Troublemaker" ],
+    "correct": "Peacemaker"
+  },
+  {
+    "type": "abcd",
+    "question": "Koje je srednje ime bivšeg i aktualnog predsjednika SAD-a, Donalda Trumpa?",
+    "options": [ "Fitzgerald", "John", "Kennedy" ],
+    "correct": "John"
+  },
+  {
+    "type": "abcd",
+    "question": "Kada je u Hrvatskoj, točnije u riječkoj tvornici papira (Smith & Meynier), prvi put pokrenut parni stroj?",
+    "options": [ "1735.", "1835.", "1935." ],
+    "correct": "1835."
+  },
+  {
+    "type": "abcd",
+    "question": "Nizozemska atletska zvijezda Femke Bol svjetska je rekorderka i prvakinja u kojoj disciplini?",
+    "options": [ "100 m prepone", "300 m zapreke", "400 m prepone" ],
+    "correct": "400 m prepone"
+  },
+  {
+    "type": "abcd",
+    "question": "Krvavi sukob škaljarskog i kavačkog klana dobio je ime po naseljima u kojoj crnogorskoj općini?",
+    "options": [ "Kotora", "Pančeva", "Trebinja" ],
+    "correct": "Kotora"
+  },
+  {
+    "type": "input",
+    "question": "Koju boju kože dobije Marvelov heroj Hulk kada se znanstvenik Bruce Banner razbijesni?",
+    "correct": [ "Zelenu", "Zelena" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji se dalmatinski poluotok u srednjem vijeku latinski nazivao „Puncta Stagni“, a hrvatski „Stonski rat“?",
+    "correct": [ "Pelješac", "Peljesac" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji hrvatski veznjak i kapetan reprezentacije u sezoni 2025./2026. nosi broj 14 u dresu AC Milana?",
+    "correct": [ "Luka Modrić", "Modric" ]
+  },
+  {
+    "type": "input",
+    "question": "Po kojem je egipatskom vođi, simbolu panarabizma, nazvano golemo umjetno jezero na rijeci Nil?",
+    "correct": [ "Naseru", "Gamal Abdel Naser" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se zove novi Pixarov film u kojem dječak Elio Solis biva teleportiran u intergalaktičku zajednicu?",
+    "correct": [ "Elio" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je francuski grad poznat po Ediktu iz 1598. i po klubu „Kanarinaca“ u žuto-zelenoj opremi?",
+    "correct": [ "Nantes", "Nant" ]
+  },
+  {
+    "type": "input",
+    "question": "Nakon čije je smrti, 10. prosinca 1999., u Hrvatskoj proglašena trodnevna žalost?",
+    "correct": [ "Franjo Tuđman", "Tudmana" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem su rubnom moru Atlantika otkriveni potopljeni ostaci drevnog egipatskog grada Herakliona?",
+    "correct": [ "Sredozemno more", "Sredozemlju" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se u Australiji naziva sveto monolitno brdo, poznato i pod kolonijalnim imenom Ayers Rock?",
+    "correct": [ "Uluru", "Australija" ]
+  },
+  {
+    "type": "input",
+    "question": "U svom djelu „Vita Karoli Magni“, franački pisac Einhard opisuje život i vladavinu kojeg cara?",
+    "correct": [ "Karla Velikog", "Karlo Veliki" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja moćna vilenjakinja (u filmu ju igra Cate Blanchett) otvara Jacksonovu trilogiju monologom o Prstenu?",
+    "correct": [ "Galadriel" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj hrvatskoj kriminalističkoj seriji Judita Franković igra novinarku koja kopa po mračnim tajnama prošlosti?",
+    "correct": [ "Počivali u miru", "Pocivali u miru" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je vođa kartela Medellín i najpoznatiji kolumbijski kriminalac nosio nadimak „El Patrón“?",
+    "correct": [ "Pablo Escobar", "Eskobar" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je engleski naziv za igrača koji pokriva cijelu stranu terena u sustavu 3-5-2 ili 5-3-2?",
+    "correct": [ "Wing-back", "Ving-bek" ]
+  },
+  {
+    "type": "input",
+    "question": "Nakon što je grad stoljećima bio zapušten, August ga je obnovio pod imenom „Ilium Novum“. O kojem gradu je riječ?",
+    "correct": [ "Troja", "Troju" ]
+  },
+  {
+    "type": "input",
+    "question": "Na kojoj se gori u blizini Križevaca nalazi vrh Vranilac, omiljen među planinarima?",
+    "correct": [ "Kalnik", "Kalniku" ]
+  },
+  {
+    "type": "input",
+    "question": "Kroz koju je srednjoameričku državu kineski konzorcij planirao izgraditi kanal kao konkurenciju Panamskom?",
+    "correct": [ "Nikaragva", "Nikaragvu" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji ciklus od četiri koncerta za violinu i orkestar predstavlja Vivaldijevo najizvođenije barokno djelo?",
+    "correct": [ "Četiri godišnja doba", "Cetri godisnja doba" ]
+  },
+  {
+    "type": "input",
+    "question": "Na kojoj je dionici Marino Bloudek srušio dugovječni rekord Luciana Sušnja iz 1974.?",
+    "correct": [ "800 metara", "800m" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji američki pisac u svom djelu „Istočno od raja“ obrađuje biblijski motiv Kaina i Abela u Kaliforniji?",
+    "correct": [ "John Steinbeck", "Stajnbek" ]
+  },
+  {
+    "type": "input",
+    "question": "Povodom smrti kojeg je vladara, koji je vladao od 1891. do 1912., Luksemburg izdao kovanicu od 2 eura?",
+    "correct": [ "Guillaume II", "Vilim II" ]
+  },
+  {
+    "type": "input",
+    "question": "Ploča Pacifik (Tihomorska ploča) odgovorna je za seizmičku aktivnost uz obale kojeg oceana?",
+    "correct": [ "Tihi ocean", "Pacifik" ]
+  },
+  {
+    "type": "input",
+    "question": "Na Berlinskom kongresu 1884.-1885. europske sile su podijelile interesne sfere na kojem kontinentu?",
+    "correct": [ "Afrika", "Africi" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je katalonski arhitekt zaslužan za bajkoviti Park Güell i nedovršenu katedralu Sagrada Família?",
+    "correct": [ "Antoni Gaudi" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojoj se američkoj saveznoj državi nalazi naftovod Trans-Alaska, dugačak preko 1200 kilometara?",
+    "correct": [ "Aljaska", "Alaska" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se zove posthumni album Olivera Dragojevića koji sadrži pjesme poput „Ne mogu ti reći“?",
+    "correct": [ "Dolaziš", "Dolazis" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem se gradu, točnije u vili Saxe, nalazi glavno sjedište UNESCO-a?",
+    "correct": [ "Pariz", "Paris" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je sarajevski kantautor autor bezvremenskih hitova „Bacila je sve niz rijeku“ i „Sarajevo, ljubavi moja“?",
+    "correct": [ "Kemal Monteno" ]
+  },
+  {
+    "type": "input",
+    "question": "Koja je nasljednica hotelskog carstva 2006. godine izdala album s ljetnim hitom „Stars Are Blind“?",
+    "correct": [ "Paris Hilton" ]
+  },
+  {
+    "type": "input",
+    "question": "Kako se na hrvatskom kaže ono što Englezi zovu „history“, a Nijemci „Geschichte“?",
+    "correct": [ "Povijest", "Historija" ]
+  },
+  {
+    "type": "input",
+    "question": "Podgora, Šipak, Plitko, Crniševo i druga jezera čine skupinu kojih jezera kod Ploča?",
+    "correct": [ "Baćinska jezera", "Bacinska" ]
+  },
+  {
+    "type": "input",
+    "question": "U kojem je gradu Chappell Roan snimala spot za pjesmu „The Subway“, koristeći njegovu golemu podzemnu mrežu?",
+    "correct": [ "New York", "Njujork" ]
+  },
+  {
+    "type": "input",
+    "question": "Koji je njemački krilni centar, legenda Dallas Mavericksa, jedini strijelac preko 30.000 koševa iz Europe u NBA-u?",
+    "correct": [ "Dirk Nowitzki", "Novicki" ]
+  },
+  {
+    "type": "input",
+    "question": "Kalinjingrad je ruska eksklava smještena na obalama kojeg mora?",
+    "correct": [ "Baltičko more", "Baltik" ]
+  }
 ]
